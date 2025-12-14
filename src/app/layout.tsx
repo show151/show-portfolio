@@ -20,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className='light'> 
-      <body className={`${inter.className} bg-gray-50 dark:bg-gray-900 transition-colors duration-300 min-h-screen flex flex-col`}>
+    <html lang="ja"> 
+      <body className={`${inter.className} bg-gray-50 dark:bg-slate-950 transition-colors duration-300 min-h-screen flex flex-col`}>
         <Header />
         <div className="grow">
           {children}

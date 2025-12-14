@@ -1,4 +1,4 @@
-import { Zap, Server, Code, Palette, Cloud } from 'lucide-react';
+import { Server, Code, Cloud } from 'lucide-react';
 
 // ページのメタデータを定義 (SEO対策)
 export const metadata = {
@@ -62,18 +62,18 @@ const LevelBadge: React.FC<{ level: Skill['level'] }> = ({ level }) => {
   let colorClass = '';
   switch (level) {
     case 'Expert':
-      colorClass = 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300';
+      colorClass = 'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300 border border-red-200 dark:border-red-800';
       break;
     case 'Advanced':
-      colorClass = 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300';
+      colorClass = 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 border border-blue-200 dark:border-blue-800';
       break;
     case 'Intermediate':
     default:
-      colorClass = 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300';
+      colorClass = 'bg-gray-100 text-gray-700 dark:bg-slate-700 dark:text-slate-300 border border-gray-200 dark:border-slate-600';
       break;
   }
   return (
-    <span className={`px-3 py-1 text-xs font-semibold rounded-full ${colorClass}`}>
+    <span className={`px-3 py-1.5 text-xs font-semibold rounded-md ${colorClass}`}>
       {level}
     </span>
   );
@@ -81,38 +81,52 @@ const LevelBadge: React.FC<{ level: Skill['level'] }> = ({ level }) => {
 
 export default function SkillsPage() {
   return (
-    <main className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 text-center">
-        💡 技術スタック (Skills)
-      </h1>
-      <p className="text-lg text-gray-600 dark:text-gray-400 max-w-4xl mx-auto mb-16 text-center">
-        私が得意とする技術分野と、それぞれの経験レベルを詳細に示しています。特に、**TypeScriptとAzure**に注力しています。
-      </p>
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-slate-950 dark:to-slate-900">
+      {/* ヘッダーセクション */}
+      <section className="pt-20 pb-12 px-4">
+        <div className="container mx-auto max-w-5xl text-center">
+          <div className="inline-flex items-center justify-center gap-3 mb-6">
+            <span className="text-4xl">💡</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white">
+              技術スタック
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
+            特に<span className="font-semibold text-blue-600 dark:text-blue-400">TypeScript</span>と<span className="font-semibold text-blue-600 dark:text-blue-400">Azure</span>に注力し、
+            モダンな開発手法を用いたアプリケーション構築を得意としています。
+          </p>
+        </div>
+      </section>
 
-      <div className="space-y-16">
+      {/* スキルカテゴリー */}
+      <section className="pb-20 px-4">
+        <div className="container mx-auto max-w-6xl space-y-12">
         {SKILL_DATA.map((category) => (
-          <section key={category.title}>
+          <section key={category.title} className="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200 dark:border-slate-700">
             {/* カテゴリーヘッダー */}
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 border-b-2 border-blue-500 pb-2 flex items-center space-x-3">
-              <category.icon className="w-7 h-7 text-blue-600" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 pb-4 border-b-2 border-blue-500 dark:border-blue-400 flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
+                <category.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              </div>
               <span>{category.title}</span>
             </h2>
 
             {/* スキルリスト */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {category.skills.map((skill) => (
-                <div key={skill.name} className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-blue-500">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
+                <div key={skill.name} className="p-5 bg-gray-50 dark:bg-slate-900/50 rounded-xl border border-gray-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-200 hover:shadow-md">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">{skill.name}</h3>
                     <LevelBadge level={skill.level} />
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">{skill.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-slate-300 leading-relaxed">{skill.description}</p>
                 </div>
               ))}
             </div>
           </section>
         ))}
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

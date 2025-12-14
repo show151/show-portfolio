@@ -47,44 +47,61 @@ const CONTACT_INFO = [
 
 export default function ContactPage() {
   return (
-    <main className="container mx-auto px-4 py-16 max-w-4xl">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 text-center">
-        📧 Contact & Links
-      </h1>
-      <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16 text-center">
-        プロジェクトに関するご質問や、採用に関するお問い合わせなど、お気軽にご連絡ください。
-      </p>
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-slate-950 dark:to-slate-900">
+      {/* ヘッダーセクション */}
+      <section className="pt-20 pb-12 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <div className="inline-flex items-center justify-center gap-3 mb-6">
+            <span className="text-4xl">📧</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white">
+              お問い合わせ
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            プロジェクトに関するご質問や、採用に関するお問い合わせなど、お気軽にご連絡ください。
+          </p>
+        </div>
+      </section>
 
-      <div className="space-y-8">
+      {/* 連絡先リスト */}
+      <section className="pb-20 px-4">
+        <div className="container mx-auto max-w-4xl space-y-6">
         {CONTACT_INFO.map((item) => (
           <a 
             key={item.title}
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 group"
+            className="block p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 group hover:-translate-y-1"
           >
-            <div className="flex items-center space-x-6">
-              <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 group-hover:scale-105 transition-transform">
-                <item.icon className="w-6 h-6" />
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+              <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform border border-blue-200 dark:border-blue-800">
+                <item.icon className="w-7 h-7" />
               </div>
-              <div>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
+              <div className="flex-1">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-1">
                   {item.title}
                 </h2>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{item.value}</p>
-                <p className="mt-1 text-xs text-gray-500 dark:text-gray-500">{item.description}</p>
+                <p className="text-base font-medium text-gray-700 dark:text-slate-300 mb-2">{item.value}</p>
+                <p className="text-sm text-gray-600 dark:text-slate-400 leading-relaxed">{item.description}</p>
               </div>
             </div>
           </a>
         ))}
-      </div>
+        </div>
+      </section>
       
-      <div className="mt-16 text-center p-6 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
-        <p className="text-gray-600 dark:text-gray-400">
-          このサイトはNext.jsとTailwind CSSで構築されており、全てGitHubで公開されています。
-        </p>
-      </div>
+      {/* フッターノート */}
+      <section className="pb-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center p-6 sm:p-8 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl border border-blue-200 dark:border-slate-600">
+            <p className="text-gray-700 dark:text-slate-300 leading-relaxed">
+              このサイトは<span className="font-semibold text-blue-600 dark:text-blue-400">Next.js</span>と<span className="font-semibold text-blue-600 dark:text-blue-400">Tailwind CSS</span>で構築されており、
+              全てGitHubで公開されています。
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

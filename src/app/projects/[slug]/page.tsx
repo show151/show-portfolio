@@ -27,49 +27,54 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   }
 
   return (
-    <main className="container mx-auto px-4 py-16 max-w-5xl">
-      
-      {/* タイトルとメタデータ */}
-      <div className="mb-10 border-b pb-4 border-gray-200 dark:border-gray-700">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-2">
-          {project.title}
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">{project.shortDescription}</p>
-      </div>
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-slate-950 dark:to-slate-900">
+      <article className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-5xl">
+        
+        {/* タイトルとメタデータ */}
+        <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">
+            {project.title}
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-700 dark:text-slate-300 leading-relaxed">{project.shortDescription}</p>
+        </header>
 
-      {/* アクションボタン */}
-      <div className="flex flex-wrap gap-4 mb-10">
-        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" 
-          className="flex items-center space-x-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-          <Github className="w-5 h-5" />
-          <span>GitHub リポジトリ</span>
-        </a>
-      </div>
-
-      {/* 詳細説明 */}
-      <section className="mb-10">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center space-x-2">
-            <Zap className="w-6 h-6 text-blue-600" />
-            <span>プロジェクト概要</span>
-        </h2>
-        {/* 通常、fullDescriptionはMarkdownやリッチテキストなので、ここで整形が必要です。 */}
-        <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">{project.fullDescription}</p>
-      </section>
-
-      {/* 使用技術 */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">使用技術スタック</h2>
-        <div className="flex flex-wrap gap-3">
-          {project.techTags.map((tag) => (
-            <span 
-              key={tag} 
-              className="px-4 py-1 text-sm font-semibold rounded-full bg-blue-500 text-white dark:bg-blue-700 dark:text-blue-100 shadow-md"
-            >
-              {tag}
-            </span>
-          ))}
+        {/* アクションボタン */}
+        <div className="flex flex-wrap gap-4 mb-12">
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" 
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-slate-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-slate-600 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold">
+            <Github className="w-5 h-5" />
+            <span>GitHub リポジトリ</span>
+          </a>
         </div>
-      </section>
+
+        {/* 詳細説明 */}
+        <section className="mb-12 p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-700">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+            <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
+              <Zap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <span>プロジェクト概要</span>
+          </h2>
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <p className="text-gray-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed">{project.fullDescription}</p>
+          </div>
+        </section>
+
+        {/* 使用技術 */}
+        <section className="p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-700">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">使用技術スタック</h2>
+          <div className="flex flex-wrap gap-3">
+            {project.techTags.map((tag) => (
+              <span 
+                key={tag} 
+                className="px-4 py-2 text-sm font-semibold rounded-lg bg-blue-600 dark:bg-blue-500 text-white shadow-md hover:shadow-lg transition-all hover:scale-105"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </section>
+      </article>
     </main>
   );
 }

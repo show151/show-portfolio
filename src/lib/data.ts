@@ -7,7 +7,7 @@ export const projects: Project[] = [
     slug: 'gundam_game',
     title: 'ガンダムバトルゲーム',
     shortDescription: 'GoogleColaboratoryで簡易的なターン制ゲームを作成しました',
-    imagePath: 'public\images\gandum_game.png',
+    imagePath: '/images/gundam_game.png',
     techTags: ['Google Colaboratory', 'Python', 'Jupyter Notebook'],
     githubUrl: '',
     pageUrl: 'https://colab.research.google.com/drive/1glYRcYt5coMsHn8cdaB2bWm6v4YBDZM1#scrollTo=chDHzWcEWKFF',
