@@ -1,65 +1,57 @@
-import Image from "next/image";
+import { ProjectCard } from '@/components/features/ProjectCard';
+import { projects } from '@/lib/data'; // 定義したデータを取り込む
+import Link from 'next/link';
 
 export default function Home() {
+  // ホームで表示する主要なプロジェクトを最大3つに限定
+  const featuredProjects = projects.slice(0, 3);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="container mx-auto px-4 py-16">
+      
+      {/* 1. メインビジュアル / キャッチフレーズ */}
+      <section className="text-center mb-20">
+        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
+          TypeScriptとAzureに精通した
+          <span className="text-blue-600 dark:text-blue-400 block">モダンなフルスタック開発者</span>
+        </h1>
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
+          Next.jsとクリーンなアーキテクチャに基づき、スケーラブルで保守性の高いアプリケーションを構築します。
+        </p>
+        <div className="flex justify-center space-x-4">
+          {/* CTAボタン（仮） */}
+          <Link href="/projects" className="px-8 py-3 text-lg font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition duration-150 shadow-md">
+            全ての作品を見る
+          </Link>
+          <a href="https://github.com/show151" target="_blank" rel="noopener noreferrer" className="px-8 py-3 text-lg font-semibold rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-150">
+            GitHubへ
+          </a>
+        </div>
+      </section>
+
+      {/* 2. 主要作品セクション */}
+      <section className="mb-20">
+        <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-10">
+          ✨ 主要な作品
+        </h2>
+        
+        {/* 作品カードのグリッド表示 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+        
+        {/* データがない場合のメッセージ */}
+        {featuredProjects.length === 0 && (
+          <p className="text-center text-gray-500 dark:text-gray-500">
+            まだ作品データが登録されていません。`src/lib/data.ts`に作品を追加してください。
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        )}
+      </section>
+
+      {/* 今後のセクション（SkillsやAboutなど）を追加予定 */}
+      
+    </main>
   );
 }
