@@ -16,7 +16,7 @@ export default function Home() {
             <span className="text-blue-600 dark:text-blue-400 block mt-2">学生の枠を超えた力を世界へ</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-slate-300 max-w-4xl mx-auto mb-10 leading-relaxed">
-            実装・調整・発表までやり切る、実行力重視の開発スタイル
+            アイデアを止めず、形にして届ける開発スタイル
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
             <Link 
