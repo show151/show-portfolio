@@ -12,11 +12,11 @@ export default function Home() {
       <section className="relative bg-gradient-to-b from-blue-50 to-white dark:from-slate-900 dark:to-slate-950 py-20 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-slate-50 leading-tight mb-6">
-            TypeScriptとAzureに精通した
-            <span className="text-blue-600 dark:text-blue-400 block mt-2">モダンなフルスタック開発者</span>
+            クラウドとAIを軸に、
+            <span className="text-blue-600 dark:text-blue-400 block mt-2">学生の枠を超えた実装と発信を。</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-slate-300 max-w-4xl mx-auto mb-10 leading-relaxed">
-            Next.jsとクリーンなアーキテクチャに基づき、スケーラブルで保守性の高いアプリケーションを構築します。
+            実装・調整・発表までやり切る、実行力重視の開発スタイル
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
             <Link 
