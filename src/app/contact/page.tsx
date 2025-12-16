@@ -32,13 +32,6 @@ const CONTACT_INFO = [
     href: 'https://linkedin.com/in/your-linkedin-id', 
     description: '職務経歴の詳細や業界人脈を確認できます。'
   },
-  { 
-    title: '履歴書 (CV/Resume)', 
-    icon: FileText, 
-    value: 'Resume_YourName.pdf', 
-    href: '/path/to/your/resume.pdf', // publicフォルダにPDFを配置
-    description: 'PDF形式の最新の履歴書をダウンロードできます。'
-  },
 ];
 
 // -----------------------------------------------------------
