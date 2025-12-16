@@ -11,7 +11,7 @@ export default function Home() {
       {/* ヒーローセクション */}
       <section className="relative bg-gradient-to-b from-blue-50 to-white dark:from-slate-900 dark:to-slate-950 py-20 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-slate-50 leading-tight mb-6">
+          <h1 className="text-1.5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-slate-50 leading-tight mb-6">
             クラウドとAIを軸に、
             <span className="text-blue-600 dark:text-blue-400 block mt-0.5">学生の枠を超えた実装と発信を。</span>
           </h1>
