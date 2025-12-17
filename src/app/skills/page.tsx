@@ -74,11 +74,11 @@ const LevelBadge = ({ level }: { level: Skill['level'] }) => {
 
 export default function SkillsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-slate-950 dark:to-slate-900">
+    <main className="min-h-screen bg-white dark:bg-black">
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            💡 技術スタック
+          <h1 className="text-5xl font-bold mb-6">
+            <span className="gradient-text">💡 技術スタック</span>
           </h1>
           <p className="text-xl text-gray-700 dark:text-slate-300 max-w-2xl mx-auto">
             <span className="font-semibold text-blue-600 dark:text-blue-400">HTML/CSS</span>、<span className="font-semibold text-blue-600 dark:text-blue-400">Python</span>、<span className="font-semibold text-blue-600 dark:text-blue-400">Kotlin</span>を中心とした幅広い技術スタックで開発しています。
@@ -90,11 +90,11 @@ export default function SkillsPage() {
         <div className="container mx-auto max-w-5xl space-y-8">
           {SKILL_DATA.map((category) => (
             <section key={category.title} className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-4 border-b-2 border-blue-500 flex items-center gap-3">
+              <h2 className="text-2xl font-bold mb-6 pb-4 border-b-2 border-blue-500 flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
                   <category.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
-                <span>{category.title}</span>
+                <span className="gradient-text">{category.title}</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

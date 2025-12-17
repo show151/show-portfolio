@@ -12,8 +12,8 @@ export const Header = () => (
   <header className="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-slate-700">
     <div className="container mx-auto px-4">
       <div className="flex justify-between items-center h-16">
-        <Link href="/" className="text-2xl font-bold text-gray-900 dark:text-slate-50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-          YourName
+        <Link href="/" className="text-2xl font-bold transition-colors">
+          <span className="gradient-text">YourName</span>
         </Link>
         
         <nav className="hidden md:flex items-center space-x-1">

@@ -21,12 +21,12 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-slate-950 dark:to-slate-900">
+    <main className="min-h-screen bg-white dark:bg-black">
       <article className="container mx-auto px-4 py-16 max-w-4xl">
         
         <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {project.title}
+          <h1 className="text-4xl font-bold mb-4">
+            <span className="gradient-text">{project.title}</span>
           </h1>
           <p className="text-xl text-gray-700 dark:text-slate-300">{project.shortDescription}</p>
         </header>
@@ -48,12 +48,12 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </div>
 
         <section className="mb-12 p-8 bg-white dark:bg-slate-800 rounded-xl shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">プロジェクト概要</h2>
+          <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">プロジェクト概要</span></h2>
           <p className="text-gray-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed">{project.fullDescription}</p>
         </section>
 
         <section className="p-8 bg-white dark:bg-slate-800 rounded-xl shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">使用技術</h2>
+          <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">使用技術</span></h2>
           <div className="flex flex-wrap gap-3">
             {project.techTags.map((tag) => (
               <span 

@@ -8,13 +8,13 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       
-      <section className="bg-gradient-to-b from-blue-50 to-white dark:from-slate-900 dark:to-slate-950 py-32">
+      <section className="bg-white dark:bg-black py-32">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-slate-50 mb-6">
-            クラウドとAIを軸に、
-            <span className="text-blue-600 dark:text-blue-400 block mt-2">学生の枠を超えた力を世界へ</span>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="gradient-text">クラウドとAIを軸に、</span>
+            <span className="gradient-text block mt-2">学生の枠を超えた力を世界へ</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-slate-300 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-white dark:text-white max-w-3xl mx-auto mb-10">
             アイデアを止めず、形にして届ける開発スタイル
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -36,10 +36,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-slate-950">
+      <section className="py-20 bg-white dark:bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            <span className="border-b-4 border-blue-600 dark:border-blue-500 pb-3">主要な作品</span>
+          <h2 className="text-4xl font-bold text-center mb-12">
+            <span className="gradient-text border-b-4 border-blue-600 pb-3">主要な作品</span>
           </h2>
           
           {featuredProjects.length > 0 ? (
