@@ -3,8 +3,8 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/show151', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/your-linkedin-id', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/聖-河野-447297324/', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:show515k@outlook.jp', label: 'Email' },
 ];
 
 const navLinks = [

@@ -28,8 +28,8 @@ const CONTACT_INFO = [
   { 
     title: 'LinkedIn', 
     icon: Linkedin, 
-    value: 'Your Name (LinkedIn Profile)', 
-    href: 'https://linkedin.com/in/your-linkedin-id', 
+    value: '河野 聖', 
+    href: 'https://linkedin.com/in/聖-河野-447297324/', 
     description: '職務経歴の詳細や業界人脈を確認できます。'
   },
 ];
