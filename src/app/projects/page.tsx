@@ -14,7 +14,7 @@ export default function ProjectsPage() {
           <h1 className="text-5xl font-bold mb-6">
             <span className="gradient-text">🛠️ 開発実績</span>
           </h1>
-          <div className="max-w-3xl mx-auto p-6 bg-gray-900 rounded-xl shadow-lg">
+          <div className="max-w-4xl mx-auto p-6 bg-gray-900 rounded-xl shadow-lg">
             <p className="text-lg text-white">
               PythonやWeb技術を中心に、Linux・Docker・クラウド環境での開発を経験してきました。<br />
               ここでは、これまでに取り組んだ制作物や実装例を紹介しています。
