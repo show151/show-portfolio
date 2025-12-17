@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja"> 
-      <body className={`${inter.className} bg-gray-50 dark:bg-slate-950 transition-colors duration-300 min-h-screen flex flex-col`}>
+      <body className={`${inter.className} bg-black min-h-screen flex flex-col`}>
         <Header />
         <div className="grow">
           {children}

@@ -74,13 +74,13 @@ const LevelBadge = ({ level }: { level: Skill['level'] }) => {
 
 export default function SkillsPage() {
   return (
-    <main className="min-h-screen bg-white dark:bg-black">
+    <main className="min-h-screen bg-black">
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl font-bold mb-6">
             <span className="gradient-text">💡 技術スタック</span>
           </h1>
-          <p className="text-xl text-gray-700 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="text-xl text-white max-w-2xl mx-auto">
             <span className="font-semibold text-blue-600 dark:text-blue-400">HTML/CSS</span>、<span className="font-semibold text-blue-600 dark:text-blue-400">Python</span>、<span className="font-semibold text-blue-600 dark:text-blue-400">Kotlin</span>を中心とした幅広い技術スタックで開発しています。
           </p>
         </div>
@@ -89,19 +89,19 @@ export default function SkillsPage() {
       <section className="pb-20 px-4">
         <div className="container mx-auto max-w-5xl space-y-8">
           {SKILL_DATA.map((category) => (
-            <section key={category.title} className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg">
+            <section key={category.title} className="bg-gray-900 rounded-xl p-8 shadow-lg">
               <h2 className="text-2xl font-bold mb-6 pb-4 border-b-2 border-blue-500 flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
-                  <category.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                <div className="p-2 rounded-lg bg-blue-900/30">
+                  <category.icon className="w-6 h-6 text-blue-400" />
                 </div>
                 <span className="gradient-text">{category.title}</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="p-4 bg-gray-50 dark:bg-slate-900/50 rounded-lg border border-gray-200 dark:border-slate-700">
+                  <div key={skill.name} className="p-4 bg-gray-800 rounded-lg border border-gray-700">
                     <div className="flex items-center justify-between">
-                      <h3 className="font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
+                      <h3 className="font-semibold text-white">{skill.name}</h3>
                       <LevelBadge level={skill.level} />
                     </div>
                   </div>

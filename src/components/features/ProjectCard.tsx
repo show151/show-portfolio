@@ -12,9 +12,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <Link href={`/projects/${project.slug}`} className="block group h-full">
-      <article className="bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-slate-700 h-full flex flex-col group-hover:-translate-y-1">
+      <article className="bg-black rounded-xl border-2 border-gray-600 hover:border-blue-500 transition-all duration-300 overflow-hidden h-full flex flex-col group-hover:-translate-y-1">
         
-        <div className="h-48 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-slate-700 dark:to-slate-600 relative overflow-hidden flex items-center justify-center">
+        <div className="h-48 bg-gray-900 relative overflow-hidden flex items-center justify-center">
           {hasImage ? (
             <Image
               src={project.imagePath}
@@ -26,7 +26,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           ) : (
             <div className="text-center">
               <div className="text-4xl mb-2">📸</div>
-              <span className="text-sm text-gray-600 dark:text-slate-300">
+              <span className="text-sm text-gray-400">
                 画像を追加してください
               </span>
             </div>
@@ -34,10 +34,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
 
         <div className="p-6 flex flex-col grow">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-slate-50 mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
             {project.title}
           </h3>
-          <p className="text-gray-600 dark:text-slate-300 mb-4 grow">
+          <p className="text-gray-300 mb-4 grow">
             {project.shortDescription}
           </p>
           
@@ -46,14 +46,14 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               {project.techTags.slice(0, 3).map((tag) => (
                 <span 
                   key={tag} 
-                  className="px-3 py-1 text-xs font-medium rounded-md bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300"
+                  className="px-3 py-1 text-xs font-medium rounded-md bg-blue-900/40 text-blue-300 border border-blue-700"
                 >
                   {tag}
                 </span>
               ))}
             </div>
             
-            <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium text-sm">
+            <div className="flex items-center gap-2 text-blue-400 font-medium text-sm">
               <span>詳細を見る</span>
               <ArrowRight className="w-4 h-4" />
             </div>

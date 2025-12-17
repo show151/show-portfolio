@@ -21,20 +21,20 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   }
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black">
+    <main className="min-h-screen bg-black">
       <article className="container mx-auto px-4 py-16 max-w-4xl">
         
         <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
           <h1 className="text-4xl font-bold mb-4">
             <span className="gradient-text">{project.title}</span>
           </h1>
-          <p className="text-xl text-gray-700 dark:text-slate-300">{project.shortDescription}</p>
+          <p className="text-xl text-white">{project.shortDescription}</p>
         </header>
 
         <div className="flex gap-4 mb-12">
           {project.githubUrl && (
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-slate-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-slate-600 transition-colors font-semibold">
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors font-semibold">
               <Github className="w-5 h-5" />
               <span>GitHub リポジトリ</span>
             </a>
@@ -47,12 +47,12 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           )}
         </div>
 
-        <section className="mb-12 p-8 bg-white dark:bg-slate-800 rounded-xl shadow-lg">
+        <section className="mb-12 p-8 bg-gray-900 rounded-xl shadow-lg">
           <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">プロジェクト概要</span></h2>
-          <p className="text-gray-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed">{project.fullDescription}</p>
+          <p className="text-white whitespace-pre-wrap leading-relaxed">{project.fullDescription}</p>
         </section>
 
-        <section className="p-8 bg-white dark:bg-slate-800 rounded-xl shadow-lg">
+        <section className="p-8 bg-gray-900 rounded-xl shadow-lg">
           <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">使用技術</span></h2>
           <div className="flex flex-wrap gap-3">
             {project.techTags.map((tag) => (

@@ -40,17 +40,16 @@ const CONTACT_INFO = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-linear-to-b from-gray-50 to-white dark:from-slate-950 dark:to-slate-900">
+    <main className="min-h-screen bg-black">
       {/* ヘッダーセクション */}
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="inline-flex items-center justify-center gap-3 mb-6">
-            <span className="text-4xl">📧</span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white">
-              お問い合わせ
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">
+              <span className="gradient-text">お問い合わせ</span>
             </h1>
           </div>
-          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed max-w-2xl mx-auto">
             プロジェクトに関するご質問や、採用に関するお問い合わせなど、お気軽にご連絡ください。
           </p>
         </div>
@@ -65,18 +64,18 @@ export default function ContactPage() {
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-6 sm:p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 group hover:-translate-y-1"
+            className="block p-6 sm:p-8 bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700 hover:border-blue-500 group hover:-translate-y-1"
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
               <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform border border-blue-200 dark:border-blue-800">
                 <item.icon className="w-7 h-7" />
               </div>
               <div className="flex-1">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-1">
+                <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">
                   {item.title}
                 </h2>
-                <p className="text-base font-medium text-gray-700 dark:text-slate-300 mb-2">{item.value}</p>
-                <p className="text-sm text-gray-600 dark:text-slate-400 leading-relaxed">{item.description}</p>
+                <p className="text-base font-medium text-gray-300 mb-2">{item.value}</p>
+                <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
               </div>
             </div>
           </a>
