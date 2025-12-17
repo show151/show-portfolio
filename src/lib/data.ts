@@ -1,6 +1,5 @@
 import { Project } from '@/types/project';
 
-// ポートフォリオの作品データ配列
 export const projects: Project[] = [
   {
     id: 1,
@@ -11,14 +10,9 @@ export const projects: Project[] = [
     techTags: ['Google Colaboratory', 'Python', 'Jupyter Notebook'],
     githubUrl: '',
     pageUrl: 'https://colab.research.google.com/drive/1glYRcYt5coMsHn8cdaB2bWm6v4YBDZM1#scrollTo=chDHzWcEWKFF',
-    fullDescription: '',
+    fullDescription: 'Pythonを使用してターン制バトルシステムを実装。キャラクター管理、戦闘ロジック、UI表示を含む完全なゲームシステムです。',
   },
-  // ２つ目、３つ目の作品データをここに追加していく...
 ];
 
-/**
- * IDに基づいて作品を取得する関数
- */
-export function getProjectBySlug(slug: string): Project | undefined {
-  return projects.find(project => project.slug === slug);
-}
+export const getProjectBySlug = (slug: string): Project | undefined =>
+  projects.find(project => project.slug === slug);

@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, FileText } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 // ページのメタデータを定義 (SEO対策)
 export const metadata = {
@@ -23,7 +23,7 @@ const CONTACT_INFO = [
     icon: Github, 
     value: 'show151', 
     href: 'https://github.com/show151', 
-    description: '全てのソースコードと貢献はGitHubでご確認いただけます。'
+    description: '全てのソースコードはGitHubでご確認いただけます。'
   },
   { 
     title: 'LinkedIn', 
@@ -40,7 +40,7 @@ const CONTACT_INFO = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-slate-950 dark:to-slate-900">
+    <main className="min-h-screen bg-linear-to-b from-gray-50 to-white dark:from-slate-950 dark:to-slate-900">
       {/* ヘッダーセクション */}
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
@@ -87,7 +87,7 @@ export default function ContactPage() {
       {/* フッターノート */}
       <section className="pb-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center p-6 sm:p-8 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl border border-blue-200 dark:border-slate-600">
+          <div className="text-center p-6 sm:p-8 bg-linear-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl border border-blue-200 dark:border-slate-600">
             <p className="text-gray-700 dark:text-slate-300 leading-relaxed">
               このサイトは<span className="font-semibold text-blue-600 dark:text-blue-400">Next.js</span>と<span className="font-semibold text-blue-600 dark:text-blue-400">Tailwind CSS</span>で構築されており、
               全てGitHubで公開されています。
