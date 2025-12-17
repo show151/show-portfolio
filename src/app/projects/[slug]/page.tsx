@@ -25,10 +25,10 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       <article className="container mx-auto px-4 py-16 max-w-4xl">
         
         <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
-          <h1 className="text-4xl font-bold mb-4">
+          <h1 className="text-4xl font-bold mb-4 animate-fade-in-up">
             <span className="gradient-text">{project.title}</span>
           </h1>
-          <p className="text-xl text-white">{project.shortDescription}</p>
+          <p className="text-xl text-white animate-fade-in animation-delay-300">{project.shortDescription}</p>
         </header>
 
         <div className="flex gap-4 mb-12">
@@ -47,12 +47,12 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           )}
         </div>
 
-        <section className="mb-12 p-8 bg-gray-900 rounded-xl shadow-lg">
+        <section className="mb-12 p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-600">
           <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">プロジェクト概要</span></h2>
           <p className="text-white whitespace-pre-wrap leading-relaxed">{project.fullDescription}</p>
         </section>
 
-        <section className="p-8 bg-gray-900 rounded-xl shadow-lg">
+        <section className="p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-900">
           <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">使用技術</span></h2>
           <div className="flex flex-wrap gap-3">
             {project.techTags.map((tag) => (
