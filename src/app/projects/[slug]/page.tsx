@@ -49,7 +49,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
         <section className="mb-12 p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-600">
           <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">プロジェクト概要</span></h2>
-          <p className="text-white whitespace-pre-wrap leading-relaxed">{project.fullDescription}</p>
+          <div className="text-white leading-relaxed whitespace-pre-line">
+            {project.fullDescription}
+          </div>
         </section>
 
         <section className="p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-900">
