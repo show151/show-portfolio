@@ -3,18 +3,20 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-
-const navItems = [
-  { name: 'ホーム', href: '/' },
-  { name: 'プロフィール', href: '/profile' },
-  { name: 'プロジェクト', href: '/projects' },
-  { name: 'スキル', href: '/skills' },
-  { name: 'お問い合わせ', href: '/contact' },
-];
+import { useLanguage, LanguageToggle } from '@/components/ui/LanguageToggle';
 
 export const Header = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
+  
+  const navItems = [
+    { name: t.nav.home, href: '/' },
+    { name: t.nav.profile, href: '/profile' },
+    { name: t.nav.projects, href: '/projects' },
+    { name: t.nav.skills, href: '/skills' },
+    { name: t.nav.contact, href: '/contact' },
+  ];
   
   return (
     <header className="sticky top-0 z-50 bg-black border-b border-gray-800">
@@ -24,14 +26,17 @@ export const Header = () => {
             <span className="gradient-text">YourName</span>
           </Link>
           
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="w-8 h-8 flex flex-col justify-center items-center gap-1 text-white hover:text-blue-400 transition-colors relative z-50"
-          >
-            <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ease-in-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-            <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ease-in-out rounded-sm ${isOpen ? 'opacity-0' : ''}`} />
-            <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ease-in-out rounded-sm ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
-          </button>
+          <div className="flex items-center gap-4">
+            <LanguageToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="w-8 h-8 flex flex-col justify-center items-center gap-1 text-white hover:text-blue-400 transition-colors relative z-50"
+            >
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ease-in-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ease-in-out rounded-sm ${isOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ease-in-out rounded-sm ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+            </button>
+          </div>
         </div>
         
         <nav className={`fixed top-0 right-0 h-full w-64 bg-black border-l border-gray-800 transform transition-transform duration-300 z-40 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
