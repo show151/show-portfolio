@@ -47,6 +47,37 @@ export const translations = {
       title: '🛠️ 開発実績',
       description: 'PythonやWeb技術を中心に、Linux・Docker・クラウド環境での開発を経験してきました。ここでは、これまでに取り組んだ制作物や実装例を紹介しています。',
       count: '全 {count} プロジェクト',
+      viewDetails: '詳細を見る',
+      data: {
+        object_detection_app: {
+          title: '物体検知アプリ',
+          shortDescription: '高専祭の展示として総合課題実習１で製作中のアプリのAIの動作部分のアプリを製作しました',
+          fullDescription: '高専祭の展示として総合課題実習１で製作中のアプリのAIの動作部分を実装。物体検知技術を用いたアプリケーションです。',
+        },
+        household_budget_app: {
+          title: '家計簿作成ツール',
+          shortDescription: `製作時期:2024/12-2025/01
+製作時間:約30時間`,
+          fullDescription: `製作時期: 2024/12-2025/01
+製作時間: 約30時間
+
+収入・支出の追加や、月ごとの収支を表示できるPythonアプリケーションです。直感的なGUIで簡単に家計簿を管理できます。`,
+        },
+        study_app: {
+          title: '学習ツール',
+          shortDescription: `製作時期:2025/01-2025/02
+製作時間:約15時間`,
+          fullDescription: `製作時期: 2025/01-2025/02
+製作時間: 約15時間
+
+タイマー機能や目標設定機能などを備えた学習支援アプリケーションです。効率的な学習をサポートします。`,
+        },
+        gundam_game: {
+          title: 'ガンダムバトルゲーム',
+          shortDescription: 'GoogleColaboratoryで簡易的なターン制ゲームを作成しました',
+          fullDescription: 'Pythonを使用してターン制バトルシステムを実装。キャラクター管理、戦闘ロジック、UI表示を含む完全なゲームシステムです。',
+        },
+      },
     },
   },
   en: {
@@ -97,6 +128,37 @@ export const translations = {
       title: '🛠️ Projects',
       description: 'I have experience developing with Python and web technologies, focusing on Linux, Docker, and cloud environments. Here I showcase the projects and implementations I have worked on.',
       count: 'Total {count} Projects',
+      viewDetails: 'View Details',
+      data: {
+        object_detection_app: {
+          title: 'Object Detection App',
+          shortDescription: 'Created an AI-powered object detection app as part of a comprehensive project for the technical college festival exhibition.',
+          fullDescription: 'Implemented the AI functionality for an object detection application as part of a comprehensive project for the technical college festival exhibition. This application utilizes object detection technology.',
+        },
+        household_budget_app: {
+          title: 'Household Budget Tool',
+          shortDescription: `Development Period: 2024/12-2025/01
+Development Time: About 30 hours`,
+          fullDescription: `Development Period: 2024/12-2025/01
+Development Time: About 30 hours
+
+A Python application that allows you to add income and expenses and display monthly financial summaries. Easy household budget management with an intuitive GUI.`,
+        },
+        study_app: {
+          title: 'Study Tool',
+          shortDescription: `Development Period: 2025/01-2025/02
+Development Time: About 15 hours`,
+          fullDescription: `Development Period: 2025/01-2025/02
+Development Time: About 15 hours
+
+A study support application with timer functions and goal-setting features. Supports efficient learning.`,
+        },
+        gundam_game: {
+          title: 'Gundam Battle Game',
+          shortDescription: 'Created a simple turn-based game using Google Colaboratory',
+          fullDescription: 'Implemented a turn-based battle system using Python. A complete game system including character management, battle logic, and UI display.',
+        },
+      },
     },
   },
 };

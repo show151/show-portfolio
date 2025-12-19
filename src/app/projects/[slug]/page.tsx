@@ -1,5 +1,9 @@
+"use client";
+
 import { getProjectBySlug, projects } from '@/lib/data';
 import { Github } from 'lucide-react';
+import { useLanguage } from '@/components/ui/LanguageToggle';
+import { useEffect, useState } from 'react';
 
 interface ProjectDetailPageProps {
   params: {
@@ -7,17 +11,20 @@ interface ProjectDetailPageProps {
   };
 }
 
-export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  const resolvedParams = await params;
+export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
+  const { t } = useLanguage();
+  const [project, setProject] = useState<any>(null);
   
-  if (!resolvedParams.slug) {
-    return <div>Project not found</div>;
-  }
-
-  const project = getProjectBySlug(resolvedParams.slug); 
-  
+  useEffect(() => {
+    const getProject = async () => {
+      const resolvedParams = await params;
+      const foundProject = getProjectBySlug(resolvedParams.slug);
+      setProject(foundProject);
+    };
+    getProject();
+  }, [params]);
   if (!project) {
-    return <div>Project not found</div>;
+    return <div>Loading...</div>;
   }
 
   return (
@@ -26,9 +33,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         
         <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
           <h1 className="text-4xl font-bold mb-4 animate-fade-in-up">
-            <span className="gradient-text">{project.title}</span>
+            <span className="gradient-text">{t.projects.data[project.slug as keyof typeof t.projects.data]?.title || project.title}</span>
           </h1>
-          <p className="text-xl text-white animate-fade-in animation-delay-300">{project.shortDescription}</p>
+          <p className="text-xl text-white animate-fade-in animation-delay-300">{t.projects.data[project.slug as keyof typeof t.projects.data]?.shortDescription || project.shortDescription}</p>
         </header>
 
         <div className="flex gap-4 mb-12">
@@ -50,7 +57,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         <section className="mb-12 p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-600">
           <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">プロジェクト概要</span></h2>
           <div className="text-white leading-relaxed whitespace-pre-line">
-            {project.fullDescription}
+            {t.projects.data[project.slug as keyof typeof t.projects.data]?.fullDescription || project.fullDescription}
           </div>
         </section>
 

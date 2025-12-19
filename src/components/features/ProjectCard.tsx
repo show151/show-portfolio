@@ -1,13 +1,17 @@
+"use client";
+
 import { Project } from '@/types/project';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/components/ui/LanguageToggle';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
+  const { t } = useLanguage();
   const hasMedia = project.imagePath?.startsWith('/');
   const isVideo = project.imagePath?.endsWith('.mp4');
 
@@ -47,10 +51,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
         <div className="p-6 flex flex-col grow">
           <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-            {project.title}
+            {t.projects.data[project.slug as keyof typeof t.projects.data]?.title || project.title}
           </h3>
           <p className="text-gray-300 mb-4 grow whitespace-pre-line">
-            {project.shortDescription}
+            {t.projects.data[project.slug as keyof typeof t.projects.data]?.shortDescription || project.shortDescription}
           </p>
           
           <div className="space-y-4">
@@ -66,7 +70,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             </div>
             
             <div className="flex items-center gap-2 text-blue-400 font-medium text-sm">
-              <span>詳細を見る</span>
+              <span>{t.projects.viewDetails}</span>
               <ArrowRight className="w-4 h-4" />
             </div>
           </div>
