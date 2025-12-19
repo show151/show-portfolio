@@ -9,6 +9,7 @@ const socialLinks = [
 
 const navLinks = [
   { name: 'ホーム', href: '/' },
+  { name: 'プロフィール', href: '/profile' },
   { name: 'プロジェクト', href: '/projects' },
   { name: 'スキル', href: '/skills' },
   { name: 'お問い合わせ', href: '/contact' },
@@ -21,29 +22,21 @@ export const Footer = () => {
     <footer className="bg-black border-t border-gray-800 mt-auto">
       <div className="container mx-auto px-4 py-12">
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-gray-200 dark:border-slate-700">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8 pb-8 border-b border-gray-800">
           
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">YourName Portfolio</h3>
-            <p className="text-sm text-gray-300">
-              Next.jsとAzureを用いたモダンなアプリケーション開発の実績を紹介しています。
-            </p>
-          </div>
-
-          <div>
             <h3 className="text-lg font-bold text-white mb-4">リンク</h3>
-            <ul className="space-y-2">
+            <div className="flex flex-wrap gap-4">
               {navLinks.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href} 
-                    className="text-sm text-gray-300 hover:text-blue-400 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
+                <Link 
+                  key={link.name}
+                  href={link.href} 
+                  className="text-sm text-gray-300 hover:text-blue-400 transition-colors"
+                >
+                  {link.name}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
           <div>
