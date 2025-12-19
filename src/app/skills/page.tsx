@@ -1,9 +1,7 @@
-import { Server, Code, Cloud, Wrench } from 'lucide-react';
+"use client";
 
-export const metadata = {
-  title: 'Skills & Tech Stack | YourName Portfolio',
-  description: 'Python, TypeScript, AWS, Unityを中心とした開発スキル一覧',
-};
+import { Server, Code, Cloud, Wrench } from 'lucide-react';
+import { useLanguage } from '@/components/ui/LanguageToggle';
 
 interface Skill {
   name: string;
@@ -11,14 +9,14 @@ interface Skill {
 }
 
 interface SkillCategory {
-  title: string;
+  titleKey: keyof typeof import('@/lib/i18n').translations.ja.skills.categories;
   icon: React.ElementType;
   skills: Skill[];
 }
 
 const SKILL_DATA: SkillCategory[] = [
   {
-    title: 'プログラミング言語',
+    titleKey: 'programming',
     icon: Code,
     skills: [
       { name: 'HTML', level: 'Expert' },
@@ -33,7 +31,7 @@ const SKILL_DATA: SkillCategory[] = [
     ],
   },
   {
-    title: '開発ツール & IDE',
+    titleKey: 'tools',
     icon: Wrench,
     skills: [
       { name: 'VSCode', level: 'Proficient' },
@@ -44,7 +42,7 @@ const SKILL_DATA: SkillCategory[] = [
     ],
   },
   {
-    title: 'クラウド & インフラ',
+    titleKey: 'cloud',
     icon: Cloud,
     skills: [
       { name: 'Docker', level: 'Basic' },
@@ -73,15 +71,17 @@ const LevelBadge = ({ level }: { level: Skill['level'] }) => {
 };
 
 export default function SkillsPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="min-h-screen bg-black">
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl font-bold mb-6 animate-fade-in-up">
-            <span className="gradient-text">💡 技術スタック</span>
+            <span className="gradient-text">{t.skills.title}</span>
           </h1>
           <p className="text-xl text-white max-w-2xl mx-auto animate-fade-in animation-delay-300">
-            <span className="font-semibold text-blue-600 dark:text-blue-400">HTML/CSS</span>、<span className="font-semibold text-blue-600 dark:text-blue-400">Python</span>、<span className="font-semibold text-blue-600 dark:text-blue-400">Kotlin</span>を中心とした幅広い技術スタックで開発しています。
+            {t.skills.description}
           </p>
         </div>
       </section>
@@ -89,12 +89,12 @@ export default function SkillsPage() {
       <section className="pb-20 px-4">
         <div className="container mx-auto max-w-5xl space-y-8">
           {SKILL_DATA.map((category) => (
-            <section key={category.title} className="bg-gray-900 rounded-xl p-8 shadow-lg animate-slide-in-left" style={{animationDelay: `${SKILL_DATA.indexOf(category) * 0.2}s`}}>
+            <section key={category.titleKey} className="bg-gray-900 rounded-xl p-8 shadow-lg animate-slide-in-left" style={{animationDelay: `${SKILL_DATA.indexOf(category) * 0.2}s`}}>
               <h2 className="text-2xl font-bold mb-6 pb-4 border-b-2 border-blue-500 flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-blue-900/30">
                   <category.icon className="w-6 h-6 text-blue-400" />
                 </div>
-                <span className="gradient-text">{category.title}</span>
+                <span className="gradient-text">{t.skills.categories[category.titleKey]}</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

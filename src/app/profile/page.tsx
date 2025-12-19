@@ -1,24 +1,24 @@
+"use client";
+
 import { User, MapPin, Calendar, Heart } from 'lucide-react';
-
-export const metadata = {
-  title: 'Profile | YourName Portfolio',
-  description: 'プロフィール情報',
-};
-
-const profileData = [
-  { icon: User, label: '学歴', value: '大阪公立大学工業高等専門学校 在学' },
-  { icon: MapPin, label: '出身', value: '大阪府' },
-  { icon: Calendar, label: '生年', value: '2007年' },
-  { icon: Heart, label: '趣味', value: '旅行 / 会話 / 英語 / スポーツ / 読書' },
-];
+import { useLanguage } from '@/components/ui/LanguageToggle';
 
 export default function ProfilePage() {
+  const { t } = useLanguage();
+
+  const profileData = [
+    { icon: User, label: t.profile.education, value: t.profile.educationValue },
+    { icon: MapPin, label: t.profile.location, value: t.profile.locationValue },
+    { icon: Calendar, label: t.profile.born, value: t.profile.bornValue },
+    { icon: Heart, label: t.profile.interests, value: t.profile.interestsValue },
+  ];
+
   return (
     <main className="min-h-screen bg-black">
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl font-bold mb-6 animate-fade-in-up">
-            <span className="gradient-text">👤 プロフィール</span>
+            <span className="gradient-text">{t.profile.title}</span>
           </h1>
         </div>
       </section>

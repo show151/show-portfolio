@@ -1,28 +1,27 @@
+"use client";
+
 import { projects } from '@/lib/data';
 import { ProjectCard } from '@/components/features/ProjectCard';
-
-export const metadata = {
-  title: 'Projects | YourName Portfolio',
-  description: 'Next.js, TypeScript, Azureを活用した全ての開発実績一覧',
-};
+import { useLanguage } from '@/components/ui/LanguageToggle';
 
 export default function ProjectsPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="min-h-screen bg-black">
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl font-bold mb-6">
-            <span className="gradient-text">🛠️ 開発実績</span>
+            <span className="gradient-text">{t.projects.title}</span>
           </h1>
           <div className="max-w-4xl mx-auto p-6 bg-gray-900 rounded-xl shadow-lg animate-fade-in animation-delay-300">
             <p className="text-lg text-white">
-              PythonやWeb技術を中心に、Linux・Docker・クラウド環境での開発を経験してきました。<br />
-              ここでは、これまでに取り組んだ制作物や実装例を紹介しています。
+              {t.projects.description}
             </p>
           </div>
           <div className="mt-6 animate-fade-in animation-delay-600">
             <span className="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-full text-sm font-medium">
-              全 {projects.length} プロジェクト
+              {t.projects.count.replace('{count}', projects.length.toString())}
             </span>
           </div>
         </div>

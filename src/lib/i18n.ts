@@ -43,6 +43,11 @@ export const translations = {
       bornValue: '2007年',
       interestsValue: '旅行 / 会話 / 英語 / スポーツ / 読書',
     },
+    projects: {
+      title: '🛠️ 開発実績',
+      description: 'PythonやWeb技術を中心に、Linux・Docker・クラウド環境での開発を経験してきました。ここでは、これまでに取り組んだ制作物や実装例を紹介しています。',
+      count: '全 {count} プロジェクト',
+    },
   },
   en: {
     nav: {
@@ -87,6 +92,11 @@ export const translations = {
       locationValue: 'Osaka, Japan',
       bornValue: '2007',
       interestsValue: 'Travel / Conversation / English / Sports / Reading',
+    },
+    projects: {
+      title: '🛠️ Projects',
+      description: 'I have experience developing with Python and web technologies, focusing on Linux, Docker, and cloud environments. Here I showcase the projects and implementations I have worked on.',
+      count: 'Total {count} Projects',
     },
   },
 };
