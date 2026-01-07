@@ -3,28 +3,19 @@
 import { getProjectBySlug, projects } from '@/lib/data';
 import { Github } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
+import { useMemo } from 'react';
 
-interface ProjectDetailPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
+export default function ProjectDetailPage() {
   const { t } = useLanguage();
-  const [project, setProject] = useState<any>(null);
+  const params = useParams();
   
-  useEffect(() => {
-    const getProject = async () => {
-      const resolvedParams = await params;
-      const foundProject = getProjectBySlug(resolvedParams.slug);
-      setProject(foundProject);
-    };
-    getProject();
-  }, [params]);
+  const project = useMemo(() => {
+    if (!params.slug || typeof params.slug !== 'string') return null;
+    return getProjectBySlug(params.slug);
+  }, [params.slug]);
   if (!project) {
-    return <div>Loading...</div>;
+    return <div>Project not found</div>;
   }
 
   return (
