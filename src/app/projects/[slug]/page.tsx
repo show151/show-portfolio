@@ -43,26 +43,26 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" 
               className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors font-semibold">
               <Github className="w-5 h-5" />
-              <span>GitHub リポジトリ</span>
+              <span>{t.projects.githubRepo}</span>
             </a>
           )}
           {project.pageUrl && (
             <a href={project.pageUrl} target="_blank" rel="noopener noreferrer" 
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-              ライブデモ
+              {t.projects.liveDemo}
             </a>
           )}
         </div>
 
         <section className="mb-12 p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-600">
-          <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">プロジェクト概要</span></h2>
+          <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">{t.projects.projectOverview}</span></h2>
           <div className="text-white leading-relaxed whitespace-pre-line">
             {t.projects.data[project.slug as keyof typeof t.projects.data]?.fullDescription || project.fullDescription}
           </div>
         </section>
 
         <section className="p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-900">
-          <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">使用技術</span></h2>
+          <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">{t.projects.techStack}</span></h2>
           <div className="flex flex-wrap gap-3">
             {project.techTags.map((tag) => (
               <span 

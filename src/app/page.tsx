@@ -55,10 +55,10 @@ export default function Home() {
           ) : (
             <div className="text-center py-12">
               <p className="text-lg text-gray-400 mb-2">
-                まだ作品データが登録されていません。
+                {t.home.noProjects}
               </p>
               <p className="text-sm text-gray-500">
-                <code className="bg-gray-800 px-2 py-1 rounded">src/lib/data.ts</code>に作品を追加してください。
+                <code className="bg-gray-800 px-2 py-1 rounded">src/lib/data.ts</code>{t.home.addProjects}
               </p>
             </div>
           )}

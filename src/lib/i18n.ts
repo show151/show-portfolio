@@ -14,6 +14,8 @@ export const translations = {
       viewProjects: '全ての作品を見る',
       github: 'GitHubへ',
       featuredProjects: '主要な作品',
+      noProjects: 'まだ作品データが登録されていません。',
+      addProjects: 'に作品を追加してください。',
     },
     skills: {
       title: '💡 技術スタック',
@@ -48,6 +50,10 @@ export const translations = {
       description: 'PythonやWeb技術を中心に、Linux・Docker・クラウド環境での開発を経験してきました。ここでは、これまでに取り組んだ制作物や実装例を紹介しています。',
       count: '全 {count} プロジェクト',
       viewDetails: '詳細を見る',
+      projectOverview: 'プロジェクト概要',
+      techStack: '使用技術',
+      githubRepo: 'GitHub リポジトリ',
+      liveDemo: 'ライブデモ',
       data: {
         object_detection_app: {
           title: '物体検知アプリ',
@@ -79,6 +85,12 @@ export const translations = {
         },
       },
     },
+    footer: {
+      portfolioDesc: 'Next.jsとAzureを用いたモダンなアプリケーション開発の実績を紹介しています。',
+      links: 'リンク',
+      connect: 'つながる',
+      copyright: 'All rights reserved. Built with Next.js and Tailwind CSS.',
+    },
   },
   en: {
     nav: {
@@ -95,6 +107,8 @@ export const translations = {
       viewProjects: 'View All Projects',
       github: 'To GitHub',
       featuredProjects: 'Featured Projects',
+      noProjects: 'No projects have been registered yet.',
+      addProjects: ' to add projects.',
     },
     skills: {
       title: '💡 Tech Stack',
@@ -129,6 +143,10 @@ export const translations = {
       description: 'I have experience developing with Python and web technologies, focusing on Linux, Docker, and cloud environments. Here I showcase the projects and implementations I have worked on.',
       count: 'Total {count} Projects',
       viewDetails: 'View Details',
+      projectOverview: 'Project Overview',
+      techStack: 'Tech Stack',
+      githubRepo: 'GitHub Repository',
+      liveDemo: 'Live Demo',
       data: {
         object_detection_app: {
           title: 'Object Detection App',
@@ -159,6 +177,12 @@ A study support application with timer functions and goal-setting features. Supp
           fullDescription: 'Implemented a turn-based battle system using Python. A complete game system including character management, battle logic, and UI display.',
         },
       },
+    },
+    footer: {
+      portfolioDesc: 'Showcasing modern application development achievements using Next.js and Azure.',
+      links: 'Links',
+      connect: 'Connect',
+      copyright: 'All rights reserved. Built with Next.js and Tailwind CSS.',
     },
   },
 };

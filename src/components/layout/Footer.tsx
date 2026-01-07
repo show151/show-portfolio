@@ -29,7 +29,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8 pb-8 border-b border-gray-800">
           
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">リンク</h3>
+            <h3 className="text-lg font-bold text-white mb-4">{t.footer.links}</h3>
             <div className="flex flex-wrap gap-4">
               {navLinks.map((link) => (
                 <Link 
@@ -44,7 +44,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">つながる</h3>
+            <h3 className="text-lg font-bold text-white mb-4">{t.footer.connect}</h3>
             <div className="flex gap-3">
               {socialLinks.map((link) => (
                 <a 
@@ -64,7 +64,7 @@ export const Footer = () => {
 
         <div className="text-center">
           <p className="text-sm text-gray-400">
-            &copy; {currentYear} YourName. All rights reserved. Built with Next.js and Tailwind CSS.
+            &copy; {currentYear} YourName. {t.footer.copyright}
           </p>
         </div>
       </div>
