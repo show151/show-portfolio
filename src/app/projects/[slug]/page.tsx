@@ -64,7 +64,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
         <section className="p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-900">
           <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">{t.projects.techStack}</span></h2>
           <div className="flex flex-wrap gap-3">
-            {project.techTags.map((tag) => (
+            {project.techTags.map((tag: string) => (
               <span 
                 key={tag} 
                 className="px-4 py-2 text-sm font-semibold rounded-lg bg-blue-600 text-white"
