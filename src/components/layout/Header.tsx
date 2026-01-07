@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { useLanguage, LanguageToggle } from '@/components/ui/LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { LanguageToggle } from '@/components/ui/LanguageToggle';
 
 export const Header = () => {
   const pathname = usePathname();

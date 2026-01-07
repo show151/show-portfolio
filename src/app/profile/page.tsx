@@ -1,7 +1,7 @@
 "use client";
 
 import { User, MapPin, Calendar, Heart } from 'lucide-react';
-import { useLanguage } from '@/components/ui/LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ProfilePage() {
   const { t } = useLanguage();

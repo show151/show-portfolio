@@ -2,7 +2,7 @@
 
 import { projects } from '@/lib/data';
 import { ProjectCard } from '@/components/features/ProjectCard';
-import { useLanguage } from '@/components/ui/LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ProjectsPage() {
   const { t } = useLanguage();

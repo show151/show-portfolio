@@ -1,5 +1,8 @@
+"use client";
+
 import Link from 'next/link';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/show151', label: 'GitHub' },
@@ -7,16 +10,17 @@ const socialLinks = [
   { icon: Mail, href: 'mailto:show515k@outlook.jp', label: 'Email' },
 ];
 
-const navLinks = [
-  { name: 'ホーム', href: '/' },
-  { name: 'プロフィール', href: '/profile' },
-  { name: 'プロジェクト', href: '/projects' },
-  { name: 'スキル', href: '/skills' },
-  { name: 'お問い合わせ', href: '/contact' },
-];
-
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { name: t.nav.home, href: '/' },
+    { name: t.nav.profile, href: '/profile' },
+    { name: t.nav.projects, href: '/projects' },
+    { name: t.nav.skills, href: '/skills' },
+    { name: t.nav.contact, href: '/contact' },
+  ];
 
   return (
     <footer className="bg-black border-t border-gray-800 mt-auto">

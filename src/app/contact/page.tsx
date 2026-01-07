@@ -1,7 +1,7 @@
 "use client";
 
 import { Mail, Github, Linkedin } from 'lucide-react';
-import { useLanguage } from '@/components/ui/LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactPage() {
   const { t } = useLanguage();

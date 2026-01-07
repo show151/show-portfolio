@@ -3,7 +3,7 @@
 import { ProjectCard } from '@/components/features/ProjectCard';
 import { projects } from '@/lib/data';
 import Link from 'next/link';
-import { useLanguage } from '@/components/ui/LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 3);

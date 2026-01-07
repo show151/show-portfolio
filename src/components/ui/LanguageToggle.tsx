@@ -1,26 +1,4 @@
-"use client";
-
-import { useState, useEffect } from 'react';
-import { translations, Language } from '@/lib/i18n';
-
-export const useLanguage = () => {
-  const [language, setLanguage] = useState<Language>('ja');
-
-  useEffect(() => {
-    const saved = localStorage.getItem('language') as Language;
-    if (saved && translations[saved]) {
-      setLanguage(saved);
-    }
-  }, []);
-
-  const toggleLanguage = () => {
-    const newLang = language === 'ja' ? 'en' : 'ja';
-    localStorage.setItem('language', newLang);
-    window.location.reload();
-  };
-
-  return { language, toggleLanguage, t: translations[language] };
-};
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export const LanguageToggle = () => {
   const { language, toggleLanguage } = useLanguage();

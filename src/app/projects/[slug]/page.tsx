@@ -2,7 +2,7 @@
 
 import { getProjectBySlug, projects } from '@/lib/data';
 import { Github } from 'lucide-react';
-import { useLanguage } from '@/components/ui/LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect, useState } from 'react';
 
 interface ProjectDetailPageProps {
@@ -78,45 +78,3 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
     </main>
   );
 }
-
-
-// -----------------------------------------------------------
-// 2. generateMetadata の async 化 (修正点 2)
-// -----------------------------------------------------------
-// generateMetadata も非同期でデータを取得するため、'async' キーワードを追加します。
-
-export async function generateMetadata({ params }: ProjectDetailPageProps) {
-    // paramsがPromiseの場合があるのでawaitする
-    const resolvedParams = await params;
-    
-    if (!resolvedParams.slug) {
-        return { title: 'Project Not Found' };
-    }
-
-    const project = getProjectBySlug(resolvedParams.slug);
-    
-    if (!project) {
-        return {
-            title: 'Project Not Found',
-        };
-    }
-    
-    return {
-        title: `${project.title} | Project Detail`,
-        description: project.shortDescription,
-    };
-}
-
-
-// -----------------------------------------------------------
-// 3. App Routerの静的生成 (SSG) の設定
-// -----------------------------------------------------------
-
-// Next.jsに、ビルド時にどのURLを事前に静的生成すべきかを伝えます。
-// これにより、パフォーマンスが最適化されます。
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
-
