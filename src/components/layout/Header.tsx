@@ -16,6 +16,7 @@ export const Header = () => {
     { name: t.nav.profile, href: '/profile' },
     { name: t.nav.projects, href: '/projects' },
     { name: t.nav.skills, href: '/skills' },
+    { name: t.nav.career, href: '/career' },
     { name: t.nav.contact, href: '/contact' },
   ];
   
@@ -24,7 +25,7 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="text-2xl font-bold">
-            <span className="gradient-text">YourName</span>
+            <span className="gradient-text">Show's Portfolio</span>
           </Link>
           
           <div className="flex items-center gap-4">
