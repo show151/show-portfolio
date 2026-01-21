@@ -25,7 +25,7 @@ export default function ContactPage() {
       title: 'LinkedIn', 
       icon: Linkedin, 
       value: '河野 聖', 
-      href: 'https://linkedin.com/in/聖-河野-447297324/', 
+      href: 'https://linkedin.com/in/聖-河野-2a7388313/', 
       description: t.contact.linkedinDesc
     },
   ];
