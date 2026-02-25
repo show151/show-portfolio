@@ -1,6 +1,6 @@
 "use client";
 
-import { getProjectBySlug, projects } from '@/lib/data';
+import { getProjectBySlug } from '@/lib/data';
 import { Github } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useParams } from 'next/navigation';

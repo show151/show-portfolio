@@ -59,6 +59,18 @@ export const projects: Project[] = [
     pageUrl: '',
     fullDescription: '京都駅周辺の観光スポットを、位置情報と連動した音声ガイドで案内するモバイルアプリです。スポット検索、マップ表示、詳細情報表示に加えて、対象スポットの半径内に入ると音声説明を自動再生する機能を実装しました。オフライン動作にも対応しています。',
   },
+  {
+    id: 6,
+    slug: 'pm_management_app',
+    title: 'PM Management App',
+    shortDescription: `製作時期:2026/01/30-2026/02/19
+                       製作時間:70時間以上`,
+    imagePath: '/images/pm_management_app.png',
+    techTags: ['Next.js', 'React', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL'],
+    githubUrl: 'https://github.com/show151/pm-management-app',
+    pageUrl: 'https://pm-management-app.vercel.app/',
+    fullDescription: 'プロジェクト管理とタスク実行ログ（見積/実績・振り返り）を一体化したWebアプリケーションです。親子タスク（WBS）管理、見積と実績の可視化、完了時の振り返り記録、オーナー/メンバー権限管理、タイムラインとダッシュボードによる進捗確認機能を実装しました。',
+  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined =>

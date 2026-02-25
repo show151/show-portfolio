@@ -25,7 +25,7 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="text-2xl font-bold">
-            <span className="gradient-text">Show's Portfolio</span>
+            <span className="gradient-text">Show&apos;s Portfolio</span>
           </Link>
           
           <div className="flex items-center gap-4">

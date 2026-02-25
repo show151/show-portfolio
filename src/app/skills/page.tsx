@@ -1,6 +1,6 @@
 "use client";
 
-import { Server, Code, Cloud, Wrench } from 'lucide-react';
+import { Code, Cloud, Wrench } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Skill {

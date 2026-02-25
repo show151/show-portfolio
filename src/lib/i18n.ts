@@ -90,6 +90,12 @@ export const translations = {
 製作内容:京都駅周辺スポットの音声ガイド付き観光アプリ`,
           fullDescription: '京都駅周辺の観光スポットを、位置情報と連動した音声ガイドで案内するモバイルアプリです。スポット検索、マップ表示、詳細情報表示に加えて、対象スポットの半径内に入ると音声説明を自動再生する機能を実装しました。オフライン動作にも対応しています。',
         },
+        pm_management_app: {
+          title: 'PM Management App',
+          shortDescription: `製作時期:2026/01/30-2026/02/19
+製作時間:70時間以上`,
+          fullDescription: 'プロジェクト管理とタスク実行ログ（見積/実績・振り返り）を一体化したWebアプリケーションです。親子タスク（WBS）管理、見積と実績の可視化、完了時の振り返り記録、オーナー/メンバー権限管理、タイムラインとダッシュボードによる進捗確認機能を実装しました。',
+        },
       },
     },
     career: {
@@ -245,6 +251,12 @@ A study support application with timer functions and goal-setting features. Supp
           shortDescription: `Development Period: 2026/01-2026/02
 Scope: Tourist app with location-based audio guide around Kyoto Station`,
           fullDescription: 'A mobile app that guides users through tourist spots around Kyoto Station with location-linked audio guidance. It includes spot search, map view, and detailed spot pages, plus automatic audio playback when entering each spot radius. Offline operation is also supported.',
+        },
+        pm_management_app: {
+          title: 'PM Management App',
+          shortDescription: `Development Period: 2026/01/30-2026/02/19
+Development Time: 70+ hours`,
+          fullDescription: 'A web application that integrates project management with task execution logs (estimated vs actual time and retrospectives). It includes parent-child task (WBS) management, estimation/actual visualization, completion-time review notes, owner/member permission controls, and progress tracking with timeline and dashboard views.',
         },
       },
     },
