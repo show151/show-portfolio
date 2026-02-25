@@ -47,6 +47,18 @@ export const projects: Project[] = [
     pageUrl: 'https://colab.research.google.com/drive/1glYRcYt5coMsHn8cdaB2bWm6v4YBDZM1#scrollTo=chDHzWcEWKFF',
     fullDescription: 'Pythonを使用してターン制バトルシステムを実装。キャラクター管理、戦闘ロジック、UI表示を含む完全なゲームシステムです。',
   },
+  {
+    id: 5,
+    slug: 'kyoto_guide_app',
+    title: '京都観光音声ガイドアプリ',
+    shortDescription: `製作時期:2026/01-2026/02
+                       製作内容:京都駅周辺スポットの音声ガイド付き観光アプリ`,
+    imagePath: '/images/kyoto_guide_app.png',
+    techTags: ['React Native', 'Expo', 'TypeScript', 'Google Maps'],
+    githubUrl: 'https://github.com/show151/Kyoto-guide-app',
+    pageUrl: '',
+    fullDescription: '京都駅周辺の観光スポットを、位置情報と連動した音声ガイドで案内するモバイルアプリです。スポット検索、マップ表示、詳細情報表示に加えて、対象スポットの半径内に入ると音声説明を自動再生する機能を実装しました。オフライン動作にも対応しています。',
+  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined =>

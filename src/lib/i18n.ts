@@ -84,6 +84,12 @@ export const translations = {
           shortDescription: 'GoogleColaboratoryで簡易的なターン制ゲームを作成しました',
           fullDescription: 'Pythonを使用してターン制バトルシステムを実装。キャラクター管理、戦闘ロジック、UI表示を含む完全なゲームシステムです。',
         },
+        kyoto_guide_app: {
+          title: '京都観光音声ガイドアプリ',
+          shortDescription: `製作時期:2026/01-2026/02
+製作内容:京都駅周辺スポットの音声ガイド付き観光アプリ`,
+          fullDescription: '京都駅周辺の観光スポットを、位置情報と連動した音声ガイドで案内するモバイルアプリです。スポット検索、マップ表示、詳細情報表示に加えて、対象スポットの半径内に入ると音声説明を自動再生する機能を実装しました。オフライン動作にも対応しています。',
+        },
       },
     },
     career: {
@@ -233,6 +239,12 @@ A study support application with timer functions and goal-setting features. Supp
           title: 'Gundam Battle Game',
           shortDescription: 'Created a simple turn-based game using Google Colaboratory',
           fullDescription: 'Implemented a turn-based battle system using Python. A complete game system including character management, battle logic, and UI display.',
+        },
+        kyoto_guide_app: {
+          title: 'Kyoto Audio Guide App',
+          shortDescription: `Development Period: 2026/01-2026/02
+Scope: Tourist app with location-based audio guide around Kyoto Station`,
+          fullDescription: 'A mobile app that guides users through tourist spots around Kyoto Station with location-linked audio guidance. It includes spot search, map view, and detailed spot pages, plus automatic audio playback when entering each spot radius. Offline operation is also supported.',
         },
       },
     },
