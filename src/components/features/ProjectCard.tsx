@@ -29,6 +29,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                 autoPlay
                 muted
                 playsInline
+                preload="metadata"
               />
             ) : (
               <Image

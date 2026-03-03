@@ -76,6 +76,20 @@ export const translations = {
 
 カメラで撮影した画像に対してTensorFlow Liteによる物体認識を実行し、認識結果の表示・翻訳（Google Cloud Translation API）・画像デコレーションの機能を実装したAndroidアプリです。`,
         },
+        next_blog_app: {
+          title: 'Next Blog App',
+          shortDescription: `製作時期: 2025/12-2026/01
+管理画面つきブログ（記事/カテゴリ/画像アップロード）`,
+          fullDescription: `製作時期: 2025/12-2026/01
+
+Next.js（App Router）で実装したブログアプリ。
+
+機能:
+- 記事一覧 / 記事詳細
+- 管理画面（ログイン / 記事CRUD / カテゴリCRUD）
+- 複数カテゴリ付与
+- カバー画像アップロード（Supabase Storage）`,
+        },
         household_budget_app: {
           title: '家計簿作成ツール',
           shortDescription: `製作時期:2024/12-2025/01
@@ -256,6 +270,20 @@ An Android app that recognizes objects in photos, translates results, and suppor
 Built for Comprehensive Project Practice 1
 
 An Android app that runs object recognition on photos using TensorFlow Lite, then displays and translates the detected results (Google Cloud Translation API) and provides an image decoration feature.`,
+        },
+        next_blog_app: {
+          title: 'Next Blog App',
+          shortDescription: `Development Period: 2025/12-2026/01
+Blog with admin (posts, categories, cover image upload).`,
+          fullDescription: `Development Period: 2025/12-2026/01
+
+Blog application built with Next.js (App Router).
+
+Features:
+- Post list / post detail
+- Admin (login / post CRUD / category CRUD)
+- Multiple categories per post
+- Cover image upload (Supabase Storage)`,
         },
         household_budget_app: {
           title: 'Household Budget Tool',

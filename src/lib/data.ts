@@ -111,6 +111,21 @@ export const projects: Project[] = [
     startDate: '2024-06',
     endDate: '2025-01',
   },
+  {
+    id: 8,
+    slug: 'next_blog_app',
+    title: 'Next Blog App',
+    shortDescription: `製作時期: 2025/12-2026/01
+管理画面つきブログ（記事/カテゴリ/画像アップロード）`,
+    imagePath: '/images/showblogapp.png',
+    techTags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Supabase'],
+    githubUrl: 'https://github.com/show151/next-blog-app',
+    pageUrl: '',
+    fullDescription:
+      '製作時期: 2025/12-2026/01\n\nNext.js（App Router）で実装したブログアプリ。\n\n機能:\n- 記事一覧 / 記事詳細\n- 管理画面（ログイン / 記事CRUD / カテゴリCRUD）\n- 複数カテゴリ付与\n- カバー画像アップロード（Supabase Storage）',
+    startDate: '2025-12',
+    endDate: '2026-01',
+  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined =>

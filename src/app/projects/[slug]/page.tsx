@@ -3,6 +3,7 @@
 import { getProjectBySlug } from '@/lib/data';
 import { ArrowLeft, Github } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useMemo } from 'react';
@@ -18,6 +19,9 @@ export default function ProjectDetailPage() {
   if (!project) {
     return <div>Project not found</div>;
   }
+
+  const hasMedia = project.imagePath?.startsWith('/');
+  const isVideo = project.imagePath?.endsWith('.mp4');
 
   return (
     <main className="min-h-screen bg-black">
@@ -54,6 +58,34 @@ export default function ProjectDetailPage() {
             </a>
           )}
         </div>
+
+        {hasMedia && (
+          <section className="mb-12 p-4 sm:p-6 bg-gray-900 rounded-xl shadow-lg animate-fade-in animation-delay-500">
+            <div className="relative w-full overflow-hidden rounded-lg bg-black/40 aspect-video">
+              {isVideo ? (
+                <video
+                  src={project.imagePath}
+                  controls
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
+                  preload="metadata"
+                  className="absolute inset-0 w-full h-full object-contain"
+                />
+              ) : (
+                <Image
+                  src={project.imagePath}
+                  alt={project.title}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  priority
+                />
+              )}
+            </div>
+          </section>
+        )}
 
         <section className="mb-12 p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-600">
           <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">{t.projects.projectOverview}</span></h2>
