@@ -9,9 +9,9 @@ export const translations = {
       contact: 'お問い合わせ',
     },
     home: {
-      title: 'クラウドとAIを軸に、',
-      subtitle: '学生の枠を超えた力を世界へ',
-      description: 'アイデアを止めず、形にして届ける開発スタイル',
+      title: 'Cloud × AI で',
+      subtitle: '作って、届ける',
+      description: '総合課題実習と個人開発の制作記録。',
       viewProjects: '全ての作品を見る',
       github: 'GitHubへ',
       featuredProjects: '主要な作品',
@@ -20,7 +20,7 @@ export const translations = {
     },
     skills: {
       title: '💡 技術スタック',
-      description: 'HTML/CSS、Python、Kotlinを中心とした幅広い技術スタックで開発しています。',
+      description: 'Web / Python / Kotlin を中心に開発。',
       categories: {
         programming: 'プログラミング言語',
         tools: '開発ツール & IDE',
@@ -29,11 +29,12 @@ export const translations = {
     },
     contact: {
       title: '✉ お問い合わせ',
-      description: 'プロジェクトに関するご質問や、採用に関するお問い合わせなど、お気軽にご連絡ください。',
+      description: 'ご連絡はメールまたはSNSへ。',
       email: 'Eメール',
-      emailDesc: '最も迅速な連絡手段です。24時間以内にご返信いたします。',
-      githubDesc: '全てのソースコードはGitHubでご確認いただけます。',
-      linkedinDesc: '職務経歴の詳細や業界人脈を確認できます。',
+      emailDesc: '返信は順次行います。',
+      githubDesc: 'コードはこちら。',
+      linkedinDesc: '経歴はこちら。',
+      footerNote: 'Next.js + Tailwind CSS。ソースはGitHubにあります。',
     },
     profile: {
       title: '👤 Profile',
@@ -48,9 +49,10 @@ export const translations = {
     },
     projects: {
       title: '🛠️ 開発実績',
-      description: 'PythonやWeb技術を中心に、Linux・Docker・クラウド環境での開発を経験してきました。ここでは、これまでに取り組んだ制作物や実装例を紹介しています。',
+      description: '学校制作（総合課題実習）と個人開発を掲載。設計〜実装まで。',
       count: '全 {count} プロジェクト',
       viewDetails: '詳細を見る',
+      backToList: '一覧に戻る',
       projectOverview: 'プロジェクト概要',
       techStack: '使用技術',
       githubRepo: 'GitHub リポジトリ',
@@ -58,8 +60,21 @@ export const translations = {
       data: {
         object_detection_app: {
           title: '物体検知アプリ',
-          shortDescription: '高専祭の展示として総合課題実習１で製作中のアプリのAIの動作部分のアプリを製作しました',
-          fullDescription: '高専祭の展示として総合課題実習１で製作中のアプリのAIの動作部分を実装。物体検知技術を用いたアプリケーションです。',
+          shortDescription: `製作時期: 2024/11
+高専祭の展示として総合課題実習1で製作中のアプリのAIの動作部分を実装しました`,
+          fullDescription: `製作時期: 2024/11
+
+高専祭の展示として総合課題実習1で製作中のアプリに、物体検知（YOLO）の動作部分を実装しました。`,
+        },
+        hacku_app: {
+          title: 'HACKU アプリ',
+          shortDescription: `製作期間: 2024/06-2025/01
+総合課題実習1で制作
+カメラで撮影した画像を物体認識し、結果の翻訳表示やデコレーションを行うAndroidアプリです。`,
+          fullDescription: `製作期間: 2024/06-2025/01
+制作: 総合課題実習1
+
+カメラで撮影した画像に対してTensorFlow Liteによる物体認識を実行し、認識結果の表示・翻訳（Google Cloud Translation API）・画像デコレーションの機能を実装したAndroidアプリです。`,
         },
         household_budget_app: {
           title: '家計簿作成ツール',
@@ -81,8 +96,12 @@ export const translations = {
         },
         gundam_game: {
           title: 'ガンダムバトルゲーム',
-          shortDescription: 'GoogleColaboratoryで簡易的なターン制ゲームを作成しました',
-          fullDescription: 'Pythonを使用してターン制バトルシステムを実装。キャラクター管理、戦闘ロジック、UI表示を含む完全なゲームシステムです。',
+          shortDescription: `製作時期: 2024/06
+製作時間: 約2時間`,
+          fullDescription: `製作時期: 2024/06
+製作時間: 約2時間
+
+Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装しました。`,
         },
         kyoto_guide_app: {
           title: '京都観光音声ガイドアプリ',
@@ -100,7 +119,7 @@ export const translations = {
     },
     career: {
       title: 'キャリア',
-      description: '学生時代から現在まで、技術と人との出会いを通じて成長してきた軌跡をご紹介します。',
+      description: '学内外の活動履歴。',
       timeline: {
         entry: {
           date: '2023年4月',
@@ -155,7 +174,7 @@ export const translations = {
       },
     },
     footer: {
-      portfolioDesc: 'Next.jsとAzureを用いたモダンなアプリケーション開発の実績を紹介しています。',
+      portfolioDesc: 'Next.js で作ったポートフォリオ。',
       links: 'リンク',
       connect: 'つながる',
       copyright: 'All rights reserved. Built with Next.js and Tailwind CSS.',
@@ -171,9 +190,9 @@ export const translations = {
       contact: 'Contact',
     },
     home: {
-      title: 'Cloud & AI Focused,',
-      subtitle: 'Beyond Student Limits to the World',
-      description: 'Development style that never stops ideas and delivers them in form',
+      title: 'Cloud × AI',
+      subtitle: 'Build. Ship.',
+      description: 'School and personal projects.',
       viewProjects: 'View All Projects',
       github: 'To GitHub',
       featuredProjects: 'Featured Projects',
@@ -182,7 +201,7 @@ export const translations = {
     },
     skills: {
       title: '💡 Tech Stack',
-      description: 'Developing with a wide range of tech stack centered on HTML/CSS, Python, and Kotlin.',
+      description: 'Web / Python / Kotlin.',
       categories: {
         programming: 'Programming Languages',
         tools: 'Development Tools & IDE',
@@ -191,11 +210,12 @@ export const translations = {
     },
     contact: {
       title: '✉ Contact',
-      description: 'Feel free to contact me for project inquiries, recruitment, or any questions.',
+      description: 'Email or social works best.',
       email: 'Email',
-      emailDesc: 'The fastest way to reach me. I will reply within 24 hours.',
-      githubDesc: 'All source code is available on GitHub.',
-      linkedinDesc: 'Check detailed work history and professional network.',
+      emailDesc: 'Replies as available.',
+      githubDesc: 'Source code.',
+      linkedinDesc: 'Work history.',
+      footerNote: 'Built with Next.js + Tailwind CSS. Source on GitHub.',
     },
     profile: {
       title: '👤 Profile',
@@ -210,9 +230,10 @@ export const translations = {
     },
     projects: {
       title: '🛠️ Projects',
-      description: 'I have experience developing with Python and web technologies, focusing on Linux, Docker, and cloud environments. Here I showcase the projects and implementations I have worked on.',
+      description: 'A selection of school and personal projects—design to implementation.',
       count: 'Total {count} Projects',
       viewDetails: 'View Details',
+      backToList: 'Back to list',
       projectOverview: 'Project Overview',
       techStack: 'Tech Stack',
       githubRepo: 'GitHub Repository',
@@ -220,8 +241,21 @@ export const translations = {
       data: {
         object_detection_app: {
           title: 'Object Detection App',
-          shortDescription: 'Created an AI-powered object detection app as part of a comprehensive project for the technical college festival exhibition.',
-          fullDescription: 'Implemented the AI functionality for an object detection application as part of a comprehensive project for the technical college festival exhibition. This application utilizes object detection technology.',
+          shortDescription: `Development Period: 2024/11
+Implemented the object detection (YOLO) part of an app for a technical college festival project.`,
+          fullDescription: `Development Period: 2024/11
+
+Implemented the object detection (YOLO) component for an app being developed for a technical college festival exhibition.`,
+        },
+        hacku_app: {
+          title: 'HACKU App',
+          shortDescription: `Development Period: 2024/06-2025/01
+Built for Comprehensive Project Practice 1
+An Android app that recognizes objects in photos, translates results, and supports image decoration.`,
+          fullDescription: `Development Period: 2024/06-2025/01
+Built for Comprehensive Project Practice 1
+
+An Android app that runs object recognition on photos using TensorFlow Lite, then displays and translates the detected results (Google Cloud Translation API) and provides an image decoration feature.`,
         },
         household_budget_app: {
           title: 'Household Budget Tool',
@@ -243,8 +277,12 @@ A study support application with timer functions and goal-setting features. Supp
         },
         gundam_game: {
           title: 'Gundam Battle Game',
-          shortDescription: 'Created a simple turn-based game using Google Colaboratory',
-          fullDescription: 'Implemented a turn-based battle system using Python. A complete game system including character management, battle logic, and UI display.',
+          shortDescription: `Development Period: 2024/06
+Development Time: About 2 hours`,
+          fullDescription: `Development Period: 2024/06
+Development Time: About 2 hours
+
+Built a simple turn-based battle game in Python on Google Colaboratory.`,
         },
         kyoto_guide_app: {
           title: 'Kyoto Audio Guide App',
@@ -262,7 +300,7 @@ Development Time: 70+ hours`,
     },
     career: {
       title: 'Career',
-      description: 'Introducing my growth journey from student days to the present, through encounters with technology and people.',
+      description: 'Activity timeline.',
       timeline: {
         entry: {
           date: 'April 2023',
@@ -317,7 +355,7 @@ Development Time: 70+ hours`,
       },
     },
     footer: {
-      portfolioDesc: 'Showcasing modern application development achievements using Next.js and Azure.',
+      portfolioDesc: 'Portfolio built with Next.js.',
       links: 'Links',
       connect: 'Connect',
       copyright: 'All rights reserved. Built with Next.js and Tailwind CSS.',

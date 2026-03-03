@@ -8,4 +8,6 @@ export interface Project {
   githubUrl: string;
   pageUrl?: string;
   fullDescription: string;
+  startDate?: string;
+  endDate?: string;
 }

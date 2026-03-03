@@ -1,16 +1,31 @@
 import { Project } from '@/types/project';
 
+const toTime = (date: string | undefined) => {
+  if (!date) return 0;
+  const normalized = date.length === 7 ? `${date}-01` : date;
+  return new Date(normalized).getTime();
+};
+
+export const getProjectsSortedByDate = (list: Project[]) =>
+  [...list].sort((a, b) => {
+    const aTime = toTime(a.endDate ?? a.startDate);
+    const bTime = toTime(b.endDate ?? b.startDate);
+    return bTime - aTime;
+  });
+
 export const projects: Project[] = [
   {
     id: 1,
     slug: 'object_detection_app',
     title: '物体検知アプリ',
-    shortDescription: '高専祭の展示として総合課題実習1で製作中のアプリのAIの動作部分のアプリを製作しました',
+    shortDescription: `製作時期: 2024/11
+高専祭の展示として総合課題実習1で製作中のアプリのAIの動作部分を実装しました`,
     imagePath: '/images/yolo_app.png',
     techTags: ['Kotlin', 'AI', 'YOLO'],
     githubUrl: 'https://github.com/show151/TFcamera_app',
     pageUrl: '',
-    fullDescription: '高専祭の展示として総合課題実習1で製作中のアプリのAIの動作部分を実装。物体検知技術を用いたアプリケーションです。',
+    fullDescription: '製作時期: 2024/11\n\n高専祭の展示として総合課題実習1で製作中のアプリに、物体検知（YOLO）の動作部分を実装しました。',
+    startDate: '2024-11',
   },
   {
     id: 2,
@@ -23,6 +38,8 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/show151/Household-Budget-Creation-App',
     pageUrl: '',
     fullDescription: '製作時期: 2024/12-2025/01\n製作時間: 約30時間\n\n収入・支出の追加や、月ごとの収支を表示できるPythonアプリケーションです。直感的なGUIで簡単に家計簿を管理できます。',
+    startDate: '2024-12',
+    endDate: '2025-01',
   },
   {
     id: 3,
@@ -35,17 +52,21 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/show151/Studying-App',
     pageUrl: '',
     fullDescription: '製作時期: 2025/01-2025/02\n製作時間: 約15時間\n\nタイマー機能や目標設定機能などを備えた学習支援アプリケーションです。効率的な学習をサポートします。',
+    startDate: '2025-01',
+    endDate: '2025-02',
   },
   {
     id: 4,
     slug: 'gundam_game',
     title: 'ガンダムバトルゲーム',
-    shortDescription: 'GoogleColaboratoryで簡易的なターン制ゲームを作成しました',
+    shortDescription: `製作時期: 2024/06
+製作時間: 約2時間`,
     imagePath: '/images/gundam_game.png',
     techTags: ['Google Colaboratory', 'Python', 'Jupyter Notebook'],
     githubUrl: '',
     pageUrl: 'https://colab.research.google.com/drive/1glYRcYt5coMsHn8cdaB2bWm6v4YBDZM1#scrollTo=chDHzWcEWKFF',
-    fullDescription: 'Pythonを使用してターン制バトルシステムを実装。キャラクター管理、戦闘ロジック、UI表示を含む完全なゲームシステムです。',
+    fullDescription: '製作時期: 2024/06\n製作時間: 約2時間\n\nGoogle Colaboratory上で、Pythonで簡易的なターン制バトルを実装しました。',
+    startDate: '2024-06',
   },
   {
     id: 5,
@@ -58,6 +79,8 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/show151/Kyoto-guide-app',
     pageUrl: '',
     fullDescription: '京都駅周辺の観光スポットを、位置情報と連動した音声ガイドで案内するモバイルアプリです。スポット検索、マップ表示、詳細情報表示に加えて、対象スポットの半径内に入ると音声説明を自動再生する機能を実装しました。オフライン動作にも対応しています。',
+    startDate: '2026-01',
+    endDate: '2026-02',
   },
   {
     id: 6,
@@ -70,6 +93,23 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/show151/pm-management-app',
     pageUrl: 'https://pm-management-app.vercel.app/',
     fullDescription: 'プロジェクト管理とタスク実行ログ（見積/実績・振り返り）を一体化したWebアプリケーションです。親子タスク（WBS）管理、見積と実績の可視化、完了時の振り返り記録、オーナー/メンバー権限管理、タイムラインとダッシュボードによる進捗確認機能を実装しました。',
+    startDate: '2026-01-30',
+    endDate: '2026-02-19',
+  },
+  {
+    id: 7,
+    slug: 'hacku_app',
+    title: 'HACKU アプリ',
+    shortDescription: `製作期間: 2024/06-2025/01
+総合課題実習1で制作
+カメラで撮影した画像を物体認識し、結果の翻訳表示やデコレーションを行うAndroidアプリです。`,
+    imagePath: '/images/HACKUapp.png',
+    techTags: ['Kotlin', 'Android', 'CameraX', 'TensorFlow Lite', 'Google Cloud Translate'],
+    githubUrl: 'https://github.com/show151/HACKU_app',
+    pageUrl: '',
+    fullDescription: '製作期間: 2024/06-2025/01\n制作: 総合課題実習1\n\nカメラで撮影した画像に対してTensorFlow Liteによる物体認識を実行し、認識結果の表示・翻訳（Google Cloud Translation API）・画像デコレーションの機能を実装したAndroidアプリです。',
+    startDate: '2024-06',
+    endDate: '2025-01',
   },
 ];
 

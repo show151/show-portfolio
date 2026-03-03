@@ -1,8 +1,9 @@
 "use client";
 
 import { getProjectBySlug } from '@/lib/data';
-import { Github } from 'lucide-react';
+import { ArrowLeft, Github } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useMemo } from 'react';
 
@@ -21,6 +22,15 @@ export default function ProjectDetailPage() {
   return (
     <main className="min-h-screen bg-black">
       <article className="container mx-auto px-4 py-16 max-w-4xl">
+        <div className="mb-6">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors border border-gray-700"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>{t.projects.backToList}</span>
+          </Link>
+        </div>
         
         <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
           <h1 className="text-4xl font-bold mb-4 animate-fade-in-up">

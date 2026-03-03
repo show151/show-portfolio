@@ -78,8 +78,7 @@ export default function ContactPage() {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center p-6 sm:p-8 bg-linear-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl border border-blue-200 dark:border-slate-600">
             <p className="text-gray-700 dark:text-slate-300 leading-relaxed">
-              このサイトは<span className="font-semibold text-blue-600 dark:text-blue-400">Next.js</span>と<span className="font-semibold text-blue-600 dark:text-blue-400">Tailwind CSS</span>で構築されており、
-              全てGitHubで公開されています。
+              {t.contact.footerNote}
             </p>
           </div>
         </div>

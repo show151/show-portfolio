@@ -1,12 +1,12 @@
 "use client";
 
 import { ProjectCard } from '@/components/features/ProjectCard';
-import { projects } from '@/lib/data';
+import { getProjectsSortedByDate, projects } from '@/lib/data';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = getProjectsSortedByDate(projects).slice(0, 3);
   const { t } = useLanguage();
 
   return (
