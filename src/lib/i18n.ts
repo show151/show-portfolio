@@ -10,7 +10,7 @@ export const translations = {
     },
     home: {
       title: '河野 聖',
-      subtitle: 'Cloud × AI Portfolio',
+      subtitle: 'Portfolio',
       viewProjects: '全ての作品を見る',
       github: 'GitHubへ',
       featuredProjects: '主要な作品',
@@ -195,7 +195,7 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
     },
     home: {
       title: 'Sho Kawano',
-      subtitle: 'Cloud × AI Portfolio',
+      subtitle: 'Portfolio',
       viewProjects: 'View All Projects',
       github: 'To GitHub',
       featuredProjects: 'Featured Projects',
