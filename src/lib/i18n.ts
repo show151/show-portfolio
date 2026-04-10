@@ -352,6 +352,10 @@ Development Time: 70+ hours`,
           date: '2026 (Planned)',
           title: 'Planned to Complete "AI Management Endowed Course ~AI Business Insights 2026~"\nHosted by University of Tokyo Matsuo-Iwasawa Laboratory',
         },
+        deepLearning: {
+          date: 'April 2026 -',
+          title: 'Completed "Deep Learning Basic Course 2026 Spring"\nHosted by University of Tokyo Matsuo-Iwasawa Laboratory',
+        },
         graduation: {
           date: 'March 2028 (Planned)',
           title: 'Planned Graduation from Osaka Metropolitan University College of Technology',
