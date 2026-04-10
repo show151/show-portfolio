@@ -16,15 +16,17 @@ export default function ProjectDetailPage() {
     if (!params.slug || typeof params.slug !== 'string') return null;
     return getProjectBySlug(params.slug);
   }, [params.slug]);
-  if (!project) {
-    return <div>Project not found</div>;
-  }
-
-  const projectTitle = t.projects.data[project.slug as keyof typeof t.projects.data]?.title || project.title;
+  const projectTitle = project
+    ? t.projects.data[project.slug as keyof typeof t.projects.data]?.title || project.title
+    : 'Project';
 
   useEffect(() => {
     document.title = `${projectTitle} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
   }, [projectTitle, language]);
+
+  if (!project) {
+    return <div>Project not found</div>;
+  }
 
   const hasMedia = project.imagePath?.startsWith('/');
   const isVideo = project.imagePath?.endsWith('.mp4');
