@@ -12,16 +12,16 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       
-      <section className="bg-black py-32">
+      <section className="bg-black py-20 sm:py-28 md:py-32">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
             <span className="gradient-text inline-block animate-fade-in-up">{t.home.title}</span>
             <span className="gradient-text block mt-2 animate-fade-in-up animation-delay-300">{t.home.subtitle}</span>
           </h1>
-          <div className="flex flex-col sm:flex-row justify-center gap-6 animate-fade-in animation-delay-900">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 animate-fade-in animation-delay-900">
             <Link 
               href="/projects" 
-              className="px-8 py-4 text-lg font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-lg"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-lg"
             >
               {t.home.viewProjects}
             </Link>
@@ -29,7 +29,7 @@ export default function Home() {
               href="https://github.com/show151" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-8 py-4 text-lg font-semibold rounded-lg border-2 border-gray-600 bg-gray-900 text-white hover:bg-gray-800 transition-colors"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg border-2 border-gray-600 bg-gray-900 text-white hover:bg-gray-800 transition-colors"
             >
               {t.home.github}
             </a>
@@ -37,9 +37,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-black">
+      <section className="py-16 sm:py-20 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in-up">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12 animate-fade-in-up">
             <span className="gradient-text border-b-4 border-blue-600 pb-3">{t.home.featuredProjects}</span>
           </h2>
           

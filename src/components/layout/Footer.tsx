@@ -25,13 +25,13 @@ export const Footer = () => {
 
   return (
     <footer className="bg-black border-t border-gray-800 mt-auto">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-8 sm:py-12">
         
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8 pb-8 border-b border-gray-800">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 sm:gap-8 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-800">
           
-          <div>
-            <h3 className="text-lg font-bold text-white mb-4">{t.footer.links}</h3>
-            <div className="flex flex-wrap gap-4">
+          <div className="w-full md:w-auto">
+            <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">{t.footer.links}</h3>
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-4 gap-y-2 sm:gap-4">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name}
@@ -44,8 +44,8 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-bold text-white mb-4">{t.footer.connect}</h3>
+          <div className="w-full md:w-auto">
+            <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">{t.footer.connect}</h3>
             <div className="flex gap-3">
               {socialLinks.map((link) => (
                 <a 
@@ -54,9 +54,9 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  className="p-3 rounded-lg bg-gray-800 text-gray-300 hover:bg-blue-600 hover:text-white transition-colors border border-gray-600"
+                  className="p-2.5 sm:p-3 rounded-lg bg-gray-800 text-gray-300 hover:bg-blue-600 hover:text-white transition-colors border border-gray-600"
                 >
-                  <link.icon className="w-5 h-5" />
+                  <link.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
               ))}
             </div>
@@ -64,7 +64,7 @@ export const Footer = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-sm text-gray-400">
+          <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
             &copy; {currentYear} YourName. {t.footer.copyright}
           </p>
         </div>

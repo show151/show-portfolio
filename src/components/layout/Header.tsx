@@ -24,7 +24,7 @@ export const Header = () => {
     <header className="sticky top-0 z-50 bg-black border-b border-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-2xl font-bold">
+          <Link href="/" className="text-lg sm:text-2xl font-bold max-w-[70vw] truncate">
             <span className="gradient-text">Show&apos;s Portfolio</span>
           </Link>
           
@@ -41,7 +41,7 @@ export const Header = () => {
           </div>
         </div>
         
-        <nav className={`fixed top-0 right-0 h-full w-64 bg-black border-l border-gray-800 transform transition-transform duration-300 z-40 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <nav className={`fixed top-0 right-0 h-full w-[85vw] max-w-xs bg-black border-l border-gray-800 transform transition-transform duration-300 z-40 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="pt-20 px-4">
             {navItems.map((item) => {
               const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));

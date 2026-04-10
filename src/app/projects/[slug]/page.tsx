@@ -31,7 +31,7 @@ export default function ProjectDetailPage() {
 
   return (
     <main className="min-h-screen bg-black">
-      <article className="container mx-auto px-4 py-16 max-w-4xl">
+      <article className="container mx-auto px-4 py-10 sm:py-16 max-w-4xl">
         <div className="mb-6">
           <Link
             href="/projects"
@@ -43,23 +43,23 @@ export default function ProjectDetailPage() {
         </div>
         
         <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
-          <h1 className="text-4xl font-bold mb-4 animate-fade-in-up">
+          <h1 className="text-2xl sm:text-4xl font-bold mb-4 animate-fade-in-up leading-tight">
             <span className="gradient-text">{projectTitle}</span>
           </h1>
-          <p className="text-xl text-white animate-fade-in animation-delay-300">{t.projects.data[project.slug as keyof typeof t.projects.data]?.shortDescription || project.shortDescription}</p>
+          <p className="text-base sm:text-xl text-white animate-fade-in animation-delay-300 whitespace-pre-line">{t.projects.data[project.slug as keyof typeof t.projects.data]?.shortDescription || project.shortDescription}</p>
         </header>
 
-        <div className="flex gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12">
           {project.githubUrl && (
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors font-semibold">
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors font-semibold w-full sm:w-auto">
               <Github className="w-5 h-5" />
               <span>{t.projects.githubRepo}</span>
             </a>
           )}
           {project.pageUrl && (
             <a href={project.pageUrl} target="_blank" rel="noopener noreferrer" 
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-center w-full sm:w-auto">
               {t.projects.liveDemo}
             </a>
           )}
@@ -93,15 +93,15 @@ export default function ProjectDetailPage() {
           </section>
         )}
 
-        <section className="mb-12 p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-600">
-          <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">{t.projects.projectOverview}</span></h2>
+        <section className="mb-12 p-5 sm:p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-600">
+          <h2 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6"><span className="gradient-text">{t.projects.projectOverview}</span></h2>
           <div className="text-white leading-relaxed whitespace-pre-line">
             {t.projects.data[project.slug as keyof typeof t.projects.data]?.fullDescription || project.fullDescription}
           </div>
         </section>
 
-        <section className="p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-900">
-          <h2 className="text-2xl font-bold mb-6"><span className="gradient-text">{t.projects.techStack}</span></h2>
+        <section className="p-5 sm:p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-900">
+          <h2 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6"><span className="gradient-text">{t.projects.techStack}</span></h2>
           <div className="flex flex-wrap gap-3">
             {project.techTags.map((tag: string) => (
               <span 

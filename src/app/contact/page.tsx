@@ -32,10 +32,10 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-black">
-      <section className="pt-20 pb-12 px-4">
+      <section className="pt-20 pb-10 sm:pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="inline-flex items-center justify-center gap-3 mb-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold animate-fade-in-up">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold animate-fade-in-up leading-tight">
               <span className="gradient-text">{t.contact.title}</span>
             </h1>
           </div>
@@ -43,25 +43,25 @@ export default function ContactPage() {
       </section>
 
       {/* 連絡先リスト */}
-      <section className="pb-20 px-4">
-        <div className="container mx-auto max-w-4xl space-y-6">
+      <section className="pb-16 sm:pb-20 px-4">
+        <div className="container mx-auto max-w-4xl space-y-4 sm:space-y-6">
         {CONTACT_INFO.map((item) => (
           <a 
             key={item.title}
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-6 sm:p-8 bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700 hover:border-blue-500 group hover:-translate-y-1"
+            className="block p-4 sm:p-8 bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700 hover:border-blue-500 group hover:-translate-y-1"
           >
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-              <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform border border-blue-200 dark:border-blue-800">
-                <item.icon className="w-7 h-7" />
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
+              <div className="p-3 sm:p-4 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform border border-blue-200 dark:border-blue-800">
+                <item.icon className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
               <div className="flex-1">
-                <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">
+                <h2 className="text-lg sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">
                   {item.title}
                 </h2>
-                <p className="text-base font-medium text-gray-300 mb-2">{item.value}</p>
+                <p className="text-sm sm:text-base font-medium text-gray-300 mb-2 break-all">{item.value}</p>
                 <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
               </div>
             </div>
@@ -71,10 +71,10 @@ export default function ContactPage() {
       </section>
       
       {/* フッターノート */}
-      <section className="pb-20 px-4">
+      <section className="pb-16 sm:pb-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center p-6 sm:p-8 bg-linear-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl border border-blue-200 dark:border-slate-600">
-            <p className="text-gray-700 dark:text-slate-300 leading-relaxed">
+          <div className="text-center p-5 sm:p-8 bg-linear-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl border border-blue-200 dark:border-slate-600">
+            <p className="text-sm sm:text-base text-gray-700 dark:text-slate-300 leading-relaxed">
               {t.contact.footerNote}
             </p>
           </div>

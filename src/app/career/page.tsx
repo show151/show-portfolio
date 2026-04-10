@@ -62,7 +62,7 @@ export default function CareerPage() {
     <main className="min-h-screen bg-black">
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl font-bold mb-6 animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-6 animate-fade-in-up">
             <span className="gradient-text">{t.career.title}</span>
           </h1>
         </div>
@@ -71,24 +71,24 @@ export default function CareerPage() {
       <section className="pb-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-blue-500"></div>
+            <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-0.5 bg-blue-500"></div>
             
-            <div className="space-y-8">
+            <div className="space-y-5 sm:space-y-8">
               {timelineData.map((item, index) => (
                 <div 
                   key={index}
-                  className="relative flex items-start gap-6 animate-slide-in-left"
+                  className="relative flex items-start gap-4 sm:gap-6 animate-slide-in-left"
                   style={{animationDelay: `${index * 0.1}s`}}
                 >
-                  <div className="flex-shrink-0 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center border-4 border-black">
-                    <Calendar className="w-6 h-6 text-white" />
+                  <div className="shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-full flex items-center justify-center border-4 border-black">
+                    <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   
-                  <div className="flex-1 bg-gray-900 rounded-xl p-6 border border-gray-700">
-                    <div className="text-sm text-blue-400 font-medium mb-2">
+                  <div className="flex-1 bg-gray-900 rounded-xl p-4 sm:p-6 border border-gray-700">
+                    <div className="text-xs sm:text-sm text-blue-400 font-medium mb-2">
                       {item.date}
                     </div>
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-base sm:text-xl font-bold text-white leading-relaxed">
                       {item.title}
                     </h3>
                   </div>
