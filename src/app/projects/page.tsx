@@ -3,10 +3,15 @@
 import { getProjectsSortedByDate, projects } from '@/lib/data';
 import { ProjectCard } from '@/components/features/ProjectCard';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useEffect } from 'react';
 
 export default function ProjectsPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const sortedProjects = getProjectsSortedByDate(projects);
+
+  useEffect(() => {
+    document.title = `${t.projects.title} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
+  }, [t.projects.title, language]);
 
   return (
     <main className="min-h-screen bg-black">

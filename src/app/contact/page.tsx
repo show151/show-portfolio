@@ -39,9 +39,6 @@ export default function ContactPage() {
               <span className="gradient-text">{t.contact.title}</span>
             </h1>
           </div>
-          <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed max-w-2xl mx-auto animate-fade-in animation-delay-300">
-            {t.contact.description}
-          </p>
         </div>
       </section>
 

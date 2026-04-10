@@ -18,9 +18,6 @@ export default function Home() {
             <span className="gradient-text inline-block animate-fade-in-up">{t.home.title}</span>
             <span className="gradient-text block mt-2 animate-fade-in-up animation-delay-300">{t.home.subtitle}</span>
           </h1>
-          <p className="text-xl text-white max-w-3xl mx-auto mb-10 animate-fade-in animation-delay-600">
-            {t.home.description}
-          </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6 animate-fade-in animation-delay-900">
             <Link 
               href="/projects" 

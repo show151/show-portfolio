@@ -2,60 +2,59 @@
 
 import { Calendar } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useEffect } from 'react';
 
 export default function CareerPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t.career.title} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
+  }, [t.career.title, language]);
 
   const timelineData = [
     {
       date: t.career.timeline.entry.date,
       title: t.career.timeline.entry.title,
-      description: t.career.timeline.entry.description,
     },
     {
       date: t.career.timeline.gakuyukai.date,
       title: t.career.timeline.gakuyukai.title,
-      description: t.career.timeline.gakuyukai.description,
     },
     {
       date: t.career.timeline.hatarakubu.date,
       title: t.career.timeline.hatarakubu.title,
-      description: t.career.timeline.hatarakubu.description,
     },
     {
       date: t.career.timeline.audioManager.date,
       title: t.career.timeline.audioManager.title,
-      description: t.career.timeline.audioManager.description,
     },
     {
       date: t.career.timeline.ideathon.date,
       title: t.career.timeline.ideathon.title,
-      description: t.career.timeline.ideathon.description,
     },
     {
       date: t.career.timeline.aiSemiconductor.date,
       title: t.career.timeline.aiSemiconductor.title,
-      description: t.career.timeline.aiSemiconductor.description,
     },
     {
       date: t.career.timeline.canvasX.date,
       title: t.career.timeline.canvasX.title,
-      description: t.career.timeline.canvasX.description,
     },
     {
       date: t.career.timeline.gci.date,
       title: t.career.timeline.gci.title,
-      description: t.career.timeline.gci.description,
     },
     {
       date: t.career.timeline.aiBusiness.date,
       title: t.career.timeline.aiBusiness.title,
-      description: t.career.timeline.aiBusiness.description,
+    },
+    {
+      date: t.career.timeline.deepLearning.date,
+      title: t.career.timeline.deepLearning.title,
     },
     {
       date: t.career.timeline.graduation.date,
       title: t.career.timeline.graduation.title,
-      description: t.career.timeline.graduation.description,
     },
   ];
 
@@ -66,9 +65,6 @@ export default function CareerPage() {
           <h1 className="text-5xl font-bold mb-6 animate-fade-in-up">
             <span className="gradient-text">{t.career.title}</span>
           </h1>
-          <p className="text-xl text-white max-w-2xl mx-auto animate-fade-in animation-delay-300">
-            {t.career.description}
-          </p>
         </div>
       </section>
 
@@ -92,12 +88,9 @@ export default function CareerPage() {
                     <div className="text-sm text-blue-400 font-medium mb-2">
                       {item.date}
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold text-white">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed whitespace-pre-line">
-                      {item.description}
-                    </p>
                   </div>
                 </div>
               ))}

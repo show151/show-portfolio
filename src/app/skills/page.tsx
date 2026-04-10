@@ -1,17 +1,13 @@
 "use client";
 
-import { Code, Cloud, Wrench } from 'lucide-react';
+import { Award, Check, Cloud, Code, Wrench } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-interface Skill {
-  name: string;
-  level: 'Expert' | 'Advanced' | 'Proficient' | 'Intermediate' | 'Basic' | 'Learning';
-}
+import { useEffect } from 'react';
 
 interface SkillCategory {
   titleKey: keyof typeof import('@/lib/i18n').translations.ja.skills.categories;
   icon: React.ElementType;
-  skills: Skill[];
+  skills: string[];
 }
 
 const SKILL_DATA: SkillCategory[] = [
@@ -19,59 +15,59 @@ const SKILL_DATA: SkillCategory[] = [
     titleKey: 'programming',
     icon: Code,
     skills: [
-      { name: 'HTML', level: 'Expert' },
-      { name: 'CSS', level: 'Expert' },
-      { name: 'Python', level: 'Advanced' },
-      { name: 'Kotlin', level: 'Advanced' },
-      { name: 'JavaScript', level: 'Basic' },
-      { name: 'C言語', level: 'Basic' },
-      { name: 'C++', level: 'Basic' },
-      { name: 'TypeScript', level: 'Learning' },
-      { name: 'C#', level: 'Learning' },
+      'HTML',
+      'CSS',
+      'Python',
+      'Kotlin',
+      'JavaScript',
+      'C言語',
+      'C++',
+      'TypeScript',
+      'C#',
     ],
   },
   {
     titleKey: 'tools',
     icon: Wrench,
     skills: [
-      { name: 'VSCode', level: 'Proficient' },
-      { name: 'Android Studio', level: 'Advanced' },
-      { name: 'Arduino', level: 'Intermediate' },
-      { name: 'Visual Studio', level: 'Basic' },
-      { name: 'Unity', level: 'Learning' },
+      'VSCode',
+      'Android Studio',
+      'Arduino',
+      'Visual Studio',
+      'Unity',
     ],
   },
   {
     titleKey: 'cloud',
     icon: Cloud,
     skills: [
-      { name: 'Docker', level: 'Basic' },
-      { name: 'AWS', level: 'Basic' },
-      { name: 'Google Cloud Console', level: 'Basic' },
-      { name: 'Ubuntu (Linux)', level: 'Learning' },
+      'Docker',
+      'Google Cloud Console',
+      'Ubuntu (Linux)',
+    ],
+  },
+  {
+    titleKey: 'certifications',
+    icon: Award,
+    skills: [
+      '実用英語技能検定2級',
+      '珠算検定初段',
+      '暗算検定2級',
     ],
   },
 ];
 
-const LevelBadge = ({ level }: { level: Skill['level'] }) => {
-  const colors = {
-    Expert: 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300',
-    Advanced: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
-    Proficient: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
-    Intermediate: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
-    Basic: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300',
-    Learning: 'bg-gray-100 text-gray-700 dark:bg-slate-700 dark:text-slate-300',
-  };
-  
-  return (
-    <span className={`px-3 py-1 text-xs font-medium rounded-md ${colors[level]}`}>
-      {level}
-    </span>
-  );
+const PROGRAMMING_SKILLS = {
+  ja: ['HTML', 'CSS', 'Python', 'Kotlin', 'JavaScript', 'C言語', 'C++', 'TypeScript', 'C#'],
+  en: ['HTML', 'CSS', 'Python', 'Kotlin', 'JavaScript', 'C Language', 'C++', 'TypeScript', 'C#'],
 };
 
 export default function SkillsPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  useEffect(() => {
+    document.title = `${t.skills.title} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
+  }, [t.skills.title, language]);
 
   return (
     <main className="min-h-screen bg-black">
@@ -80,33 +76,34 @@ export default function SkillsPage() {
           <h1 className="text-5xl font-bold mb-6 animate-fade-in-up">
             <span className="gradient-text">{t.skills.title}</span>
           </h1>
-          <p className="text-xl text-white max-w-2xl mx-auto animate-fade-in animation-delay-300">
-            {t.skills.description}
-          </p>
         </div>
       </section>
 
       <section className="pb-20 px-4">
-        <div className="container mx-auto max-w-5xl space-y-8">
-          {SKILL_DATA.map((category) => (
-            <section key={category.titleKey} className="bg-gray-900 rounded-xl p-8 shadow-lg animate-slide-in-left" style={{animationDelay: `${SKILL_DATA.indexOf(category) * 0.2}s`}}>
-              <h2 className="text-2xl font-bold mb-6 pb-4 border-b-2 border-blue-500 flex items-center gap-3">
+        <div className="container mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {SKILL_DATA.map((category, index) => (
+            <section
+              key={category.titleKey}
+              className="bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-800 animate-slide-in-left"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <h2 className="text-xl font-bold mb-5 pb-3 border-b border-blue-500/60 flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-blue-900/30">
-                  <category.icon className="w-6 h-6 text-blue-400" />
+                  <category.icon className="w-5 h-5 text-blue-400" />
                 </div>
                 <span className="gradient-text">{t.skills.categories[category.titleKey]}</span>
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name} className="p-4 bg-gray-800 rounded-lg border border-gray-700">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-semibold text-white">{skill.name}</h3>
-                      <LevelBadge level={skill.level} />
-                    </div>
-                  </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {(category.titleKey === 'programming'
+                  ? PROGRAMMING_SKILLS[language]
+                  : category.skills).map((skill) => (
+                  <li key={`${category.titleKey}-${skill}`} className="p-3 bg-gray-800 rounded-lg border border-gray-700/80 flex items-center gap-2">
+                    <Check className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="font-medium text-white leading-relaxed">{skill}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </section>
           ))}
         </div>

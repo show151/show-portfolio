@@ -9,9 +9,8 @@ export const translations = {
       contact: 'お問い合わせ',
     },
     home: {
-      title: 'Cloud × AI で',
-      subtitle: '作って、届ける',
-      description: '総合課題実習と個人開発の制作記録。',
+      title: '河野 聖',
+      subtitle: 'Cloud × AI Portfolio',
       viewProjects: '全ての作品を見る',
       github: 'GitHubへ',
       featuredProjects: '主要な作品',
@@ -20,16 +19,15 @@ export const translations = {
     },
     skills: {
       title: '💡 技術スタック',
-      description: 'Web / Python / Kotlin を中心に開発。',
       categories: {
         programming: 'プログラミング言語',
         tools: '開発ツール & IDE',
         cloud: 'クラウド & インフラ',
+        certifications: '資格・検定',
       },
     },
     contact: {
       title: '✉ お問い合わせ',
-      description: 'ご連絡はメールまたはSNSへ。',
       email: 'Eメール',
       emailDesc: '返信は順次行います。',
       githubDesc: 'コードはこちら。',
@@ -37,7 +35,7 @@ export const translations = {
       footerNote: 'Next.js + Tailwind CSS。ソースはGitHubにあります。',
     },
     profile: {
-      title: '👤 Profile',
+      title: '👤 プロフィール',
       education: '学歴',
       location: '住所',
       born: '生年',
@@ -49,7 +47,6 @@ export const translations = {
     },
     projects: {
       title: '🛠️ 開発実績',
-      description: '学校制作（総合課題実習）と個人開発を掲載。設計〜実装まで。',
       count: '全 {count} プロジェクト',
       viewDetails: '詳細を見る',
       backToList: '一覧に戻る',
@@ -133,57 +130,50 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
     },
     career: {
       title: 'キャリア',
-      description: '学内外の活動履歴。',
       timeline: {
         entry: {
           date: '2023年4月',
           title: '大阪公立大学工業高等専門学校 入学',
-          description: '技術分野を軸に、学内外での活動を本格的に開始。',
         },
         gakuyukai: {
           date: '2023年5月〜2026年3月',
           title: '学友会執行部に所属',
-          description: '学内イベントの運営に継続的に関与し、組織運営の経験を積む。',
         },
         hatarakubu: {
           date: '2023年9月〜2026年3月',
-          title: '中高生向けキャリア探究サービス「はたらく部」に参加',
-          description: '約2年半にわたり、社会人・学生との対話やプログラムを通じて、\nキャリア観・働き方・社会との関わりについて探究。',
+          title: '中高生向けキャリア探究サービス「TANQ BASE」に参加',
         },
         audioManager: {
           date: '2025年4月〜2026年3月',
-          title: '学友会執行部 音響課長',
-          description: '音響面の統括、新人研修の企画・運営を担当し、\nチームマネジメントおよび現場対応力を磨く。',
+          title: '学友会執行部 音響課長に就任',
         },
         ideathon: {
           date: '2025年8月〜2025年9月',
           title: '「大公大高専生×企業 共創アイデアソン2025」に参加',
-          description: 'スマレジ部門にて優秀賞を受賞。\n企業課題に対する提案力とチームでの共創経験を得る。',
         },
         aiSemiconductor: {
           date: '2025年8月〜2025年10月',
           title: '東京大学 松尾・岩澤研究室 主宰\n「AIと半導体 AI半導体講座 2025 Summer」受講',
-          description: '優秀生に選出され、AIと半導体の基礎から応用までを体系的に学ぶ。',
         },
         canvasX: {
           date: '2025年12月〜2026年2月',
           title: '若年層向け成果連動型キャリア実践プログラム「Canvas X」に参加',
-          description: '実践型プログラムを通じて、成果創出と自己成長の両立を経験。',
         },
         gci: {
           date: '2025年12月〜2026年2月',
           title: '東京大学 松尾・岩澤研究室 主宰\n「東京大学グローバル消費インテリジェンス寄付講座（GCI）Winter 2025」受講',
-          description: 'データ分析・意思決定に関する実践的知見を習得。',
         },
         aiBusiness: {
-          date: '2026年（予定）',
-          title: '東京大学 松尾・岩澤研究室 主宰\n「AI経営 寄付講座 〜AI Business Insights 2026〜」受講予定',
-          description: 'AIと経営・ビジネスの接続を学ぶ予定。',
+          date: '2026年2月～2026年3月',
+          title: '東京大学 松尾・岩澤研究室 主宰\n「AI経営 寄付講座 〜AI Business Insights 2026〜」受講',
+        },
+        deepLearning: {
+          date: '2026年4月～',
+          title: '東京大学 松尾・岩澤研究室 主宰\n「深層学習 Deep Learning 基礎講座 2026 Spring」受講',
         },
         graduation: {
           date: '2028年3月（予定）',
           title: '大阪公立大学工業高等専門学校 卒業予定',
-          description: '',
         },
       },
     },
@@ -204,9 +194,8 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
       contact: 'Contact',
     },
     home: {
-      title: 'Cloud × AI',
-      subtitle: 'Build. Ship.',
-      description: 'School and personal projects.',
+      title: 'Sho Kawano',
+      subtitle: 'Cloud × AI Portfolio',
       viewProjects: 'View All Projects',
       github: 'To GitHub',
       featuredProjects: 'Featured Projects',
@@ -215,16 +204,15 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
     },
     skills: {
       title: '💡 Tech Stack',
-      description: 'Web / Python / Kotlin.',
       categories: {
         programming: 'Programming Languages',
         tools: 'Development Tools & IDE',
         cloud: 'Cloud & Infrastructure',
+        certifications: 'Certifications',
       },
     },
     contact: {
       title: '✉ Contact',
-      description: 'Email or social works best.',
       email: 'Email',
       emailDesc: 'Replies as available.',
       githubDesc: 'Source code.',
@@ -244,7 +232,6 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
     },
     projects: {
       title: '🛠️ Projects',
-      description: 'A selection of school and personal projects—design to implementation.',
       count: 'Total {count} Projects',
       viewDetails: 'View Details',
       backToList: 'Back to list',
@@ -328,57 +315,46 @@ Development Time: 70+ hours`,
     },
     career: {
       title: 'Career',
-      description: 'Activity timeline.',
       timeline: {
         entry: {
           date: 'April 2023',
           title: 'Enrolled in Osaka Metropolitan University College of Technology',
-          description: 'Started full-scale activities both inside and outside the school, focusing on technical fields.',
         },
         gakuyukai: {
           date: 'May 2023 - March 2026',
           title: 'Member of Student Association Executive Committee',
-          description: 'Continuously involved in organizing school events and gained experience in organizational management.',
         },
         hatarakubu: {
           date: 'September 2023 - March 2026',
           title: 'Participated in "Hataraku-bu" Career Exploration Service for Junior and Senior High School Students',
-          description: 'For about 2.5 years, explored career perspectives, work styles, and social engagement\nthrough dialogues and programs with working professionals and students.',
         },
         audioManager: {
           date: 'April 2025 - March 2026',
           title: 'Student Association Executive Committee - Audio Section Chief',
-          description: 'Responsible for overall audio management and planning/operating new member training,\ndeveloping team management and on-site response capabilities.',
         },
         ideathon: {
           date: 'August 2025 - September 2025',
           title: 'Participated in "Osaka Metropolitan University College of Technology Students × Companies Co-creation Ideathon 2025"',
-          description: 'Won Excellence Award in the Smaregi division.\nGained proposal skills for corporate challenges and team co-creation experience.',
         },
         aiSemiconductor: {
           date: 'August 2025 - October 2025',
           title: 'Completed "AI and Semiconductors AI Semiconductor Course 2025 Summer"\nHosted by University of Tokyo Matsuo-Iwasawa Laboratory',
-          description: 'Selected as an outstanding student and systematically learned AI and semiconductors from basics to applications.',
         },
         canvasX: {
           date: 'December 2025 - February 2026',
           title: 'Participated in "Canvas X" Performance-linked Career Practice Program for Young People',
-          description: 'Experienced balancing achievement creation and self-growth through practical programs.',
         },
         gci: {
           date: 'December 2025 - February 2026',
           title: 'Completed "University of Tokyo Global Consumer Intelligence Endowed Course (GCI) Winter 2025"\nHosted by University of Tokyo Matsuo-Iwasawa Laboratory',
-          description: 'Acquired practical knowledge in data analysis and decision-making.',
         },
         aiBusiness: {
           date: '2026 (Planned)',
           title: 'Planned to Complete "AI Management Endowed Course ~AI Business Insights 2026~"\nHosted by University of Tokyo Matsuo-Iwasawa Laboratory',
-          description: 'Planning to learn the connection between AI and management/business.',
         },
         graduation: {
           date: 'March 2028 (Planned)',
           title: 'Planned Graduation from Osaka Metropolitan University College of Technology',
-          description: '',
         },
       },
     },

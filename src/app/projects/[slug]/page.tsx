@@ -6,10 +6,10 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 export default function ProjectDetailPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const params = useParams();
   
   const project = useMemo(() => {
@@ -19,6 +19,12 @@ export default function ProjectDetailPage() {
   if (!project) {
     return <div>Project not found</div>;
   }
+
+  const projectTitle = t.projects.data[project.slug as keyof typeof t.projects.data]?.title || project.title;
+
+  useEffect(() => {
+    document.title = `${projectTitle} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
+  }, [projectTitle, language]);
 
   const hasMedia = project.imagePath?.startsWith('/');
   const isVideo = project.imagePath?.endsWith('.mp4');
@@ -38,7 +44,7 @@ export default function ProjectDetailPage() {
         
         <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
           <h1 className="text-4xl font-bold mb-4 animate-fade-in-up">
-            <span className="gradient-text">{t.projects.data[project.slug as keyof typeof t.projects.data]?.title || project.title}</span>
+            <span className="gradient-text">{projectTitle}</span>
           </h1>
           <p className="text-xl text-white animate-fade-in animation-delay-300">{t.projects.data[project.slug as keyof typeof t.projects.data]?.shortDescription || project.shortDescription}</p>
         </header>
