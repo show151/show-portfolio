@@ -138,7 +138,7 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
       openExternal: '外部記事を開く',
     },
     career: {
-      title: 'キャリア',
+      title: '🧭 キャリア',
       timeline: {
         entry: {
           date: '2023年4月',
@@ -332,7 +332,7 @@ Development Time: 70+ hours`,
       openExternal: 'Open external article',
     },
     career: {
-      title: 'Career',
+      title: '🧭 Career',
       timeline: {
         entry: {
           date: 'April 2023',
