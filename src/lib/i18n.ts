@@ -3,6 +3,7 @@ export const translations = {
     nav: {
       home: 'ホーム',
       projects: 'プロジェクト',
+      blog: '投稿',
       skills: 'スキル',
       profile: 'プロフィール',
       career: 'キャリア',
@@ -128,6 +129,14 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
         },
       },
     },
+    blog: {
+      title: '投稿一覧',
+      count: '全 {count} 記事',
+      readMore: '続きを読む',
+      externalLabel: '外部',
+      backToList: '一覧に戻る',
+      openExternal: '外部記事を開く',
+    },
     career: {
       title: 'キャリア',
       timeline: {
@@ -188,6 +197,7 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
     nav: {
       home: 'Home',
       projects: 'Projects',
+      blog: 'Blog',
       skills: 'Skills',
       profile: 'Profile',
       career: 'Career',
@@ -312,6 +322,14 @@ Development Time: 70+ hours`,
           fullDescription: 'A web application that integrates project management with task execution logs (estimated vs actual time and retrospectives). It includes parent-child task (WBS) management, estimation/actual visualization, completion-time review notes, owner/member permission controls, and progress tracking with timeline and dashboard views.',
         },
       },
+    },
+    blog: {
+      title: 'Blog',
+      count: 'Total {count} Posts',
+      readMore: 'Read more',
+      externalLabel: 'External',
+      backToList: 'Back to list',
+      openExternal: 'Open external article',
     },
     career: {
       title: 'Career',
