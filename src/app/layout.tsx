@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: SITE_NAME_JA,
+  description: '興味を形にする情報系高専生のポートフォリオ',
 };
 
 export default function RootLayout({
