@@ -86,7 +86,11 @@ export default function BlogPostClient({ post }: Props) {
         </header>
 
         <section className="mb-12 p-5 sm:p-8 bg-gray-900 rounded-xl shadow-lg">
-          <div className="prose prose-invert text-gray-200 whitespace-pre-line">{post.content || post.excerpt}</div>
+          {post.content ? (
+            <div className="prose prose-invert text-gray-200" dangerouslySetInnerHTML={{ __html: post.content }} />
+          ) : (
+            <div className="prose prose-invert text-gray-200 whitespace-pre-line">{post.excerpt}</div>
+          )}
         </section>
       </article>
     </main>

@@ -1,8 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
 import { Post } from '@/types/post';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkGfm from 'remark-gfm';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+import rehypeHighlight from 'rehype-highlight';
 
 const toTime = (date: string | undefined) => {
   if (!date) return 0;
@@ -41,13 +46,27 @@ function loadLocalPosts(): Post[] {
     const contentDir = path.join(process.cwd(), 'content', 'blog');
     if (!fs.existsSync(contentDir)) return [];
 
-    const files = fs.readdirSync(contentDir).filter((f) => f.endsWith('.md'));
+    const files = fs.readdirSync(contentDir).filter((f) => f.endsWith('.md') || f.endsWith('.mdx'));
     return files.map((file, idx) => {
       const full = path.join(contentDir, file);
       const raw = fs.readFileSync(full, 'utf-8');
       const { data, content } = matter(raw);
-      const slug = file.replace(/\.md$/, '');
-      const html = marked.parse(content || '');
+      const slug = file.replace(/\.(md|mdx)$/, '');
+
+      let html = '';
+      try {
+        const vfile = unified()
+          .use(remarkParse)
+          .use(remarkGfm)
+          .use(remarkRehype)
+          .use(rehypeHighlight)
+          .use(rehypeStringify)
+          .processSync(content || '');
+        html = String(vfile);
+      } catch (e) {
+        html = (content || '').replace(/</g, '&lt;').slice(0, 1000);
+      }
+
       const post: Post = {
         id: 1000 + idx,
         slug,
