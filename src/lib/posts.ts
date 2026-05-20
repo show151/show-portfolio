@@ -1,3 +1,7 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { marked } from 'marked';
 import { Post } from '@/types/post';
 
 const toTime = (date: string | undefined) => {
@@ -13,7 +17,7 @@ export const getPostsSortedByDate = (list: Post[]) =>
     return bTime - aTime;
   });
 
-export const posts: Post[] = [
+const externalPosts: Post[] = [
   {
     id: 1,
     slug: 'redis-fastapi-understanding',
@@ -32,5 +36,33 @@ export const posts: Post[] = [
   },
 ];
 
-export const getPostBySlug = (slug: string): Post | undefined =>
-  posts.find((p) => p.slug === slug);
+function loadLocalPosts(): Post[] {
+  try {
+    const contentDir = path.join(process.cwd(), 'content', 'blog');
+    if (!fs.existsSync(contentDir)) return [];
+
+    const files = fs.readdirSync(contentDir).filter((f) => f.endsWith('.md'));
+    return files.map((file, idx) => {
+      const full = path.join(contentDir, file);
+      const raw = fs.readFileSync(full, 'utf-8');
+      const { data, content } = matter(raw);
+      const slug = file.replace(/\.md$/, '');
+      const html = marked.parse(content || '');
+      const post: Post = {
+        id: 1000 + idx,
+        slug,
+        title: data.title || slug,
+        excerpt: data.excerpt || (content || '').slice(0, 160),
+        content: html,
+        publishedAt: data.publishedAt || data.date,
+      } as Post;
+      return post;
+    });
+  } catch (e) {
+    return [];
+  }
+}
+
+export const posts: Post[] = [...externalPosts, ...loadLocalPosts()];
+
+export const getPostBySlug = (slug: string): Post | undefined => posts.find((p) => p.slug === slug);
