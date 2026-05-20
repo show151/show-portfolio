@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_NAME_JA } from '@/lib/title';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header'; 
@@ -8,7 +9,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '河野 聖 | Cloud × AI Portfolio',
+  title: SITE_NAME_JA,
   description: 'TypeScript, React, Azureのスキルを証明するモダンなポートフォリオサイト',
 };
 

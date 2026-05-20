@@ -57,7 +57,7 @@ export const translations = {
       liveDemo: 'ライブデモ',
       data: {
         object_detection_app: {
-          title: '物体検知アプリ',
+          title: '🧠 物体検知アプリ',
           shortDescription: `製作時期: 2024/11
 高専祭の展示として総合課題実習1で製作中のアプリのAIの動作部分を実装しました`,
           fullDescription: `製作時期: 2024/11
@@ -65,7 +65,7 @@ export const translations = {
 高専祭の展示として総合課題実習1で製作中のアプリに、物体検知（YOLO）の動作部分を実装しました。`,
         },
         hacku_app: {
-          title: 'HACKU アプリ',
+          title: '📸 HACKU アプリ',
           shortDescription: `製作期間: 2024/06-2025/01
 総合課題実習1で制作
 カメラで撮影した画像を物体認識し、結果の翻訳表示やデコレーションを行うAndroidアプリです。`,
@@ -75,7 +75,7 @@ export const translations = {
 カメラで撮影した画像に対してTensorFlow Liteによる物体認識を実行し、認識結果の表示・翻訳（Google Cloud Translation API）・画像デコレーションの機能を実装したAndroidアプリです。`,
         },
         next_blog_app: {
-          title: 'Next Blog App',
+          title: '📝 Next Blog App',
           shortDescription: `製作時期: 2025/12-2026/01
 管理画面つきブログ（記事/カテゴリ/画像アップロード）`,
           fullDescription: `製作時期: 2025/12-2026/01
@@ -89,7 +89,7 @@ Next.js（App Router）で実装したブログアプリ。
 - カバー画像アップロード（Supabase Storage）`,
         },
         household_budget_app: {
-          title: '家計簿作成ツール',
+          title: '💳 家計簿作成ツール',
           shortDescription: `製作時期:2024/12-2025/01
 製作時間:約30時間`,
           fullDescription: `製作時期: 2024/12-2025/01
@@ -98,7 +98,7 @@ Next.js（App Router）で実装したブログアプリ。
 収入・支出の追加や、月ごとの収支を表示できるPythonアプリケーションです。直感的なGUIで簡単に家計簿を管理できます。`,
         },
         study_app: {
-          title: '学習ツール',
+          title: '⏱️ 学習ツール',
           shortDescription: `製作時期:2025/01-2025/02
 製作時間:約15時間`,
           fullDescription: `製作時期: 2025/01-2025/02
@@ -107,7 +107,7 @@ Next.js（App Router）で実装したブログアプリ。
 タイマー機能や目標設定機能などを備えた学習支援アプリケーションです。効率的な学習をサポートします。`,
         },
         gundam_game: {
-          title: 'ガンダムバトルゲーム',
+          title: '🎮 ガンダムバトルゲーム',
           shortDescription: `製作時期: 2024/06
 製作時間: 約2時間`,
           fullDescription: `製作時期: 2024/06
@@ -116,13 +116,13 @@ Next.js（App Router）で実装したブログアプリ。
 Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装しました。`,
         },
         kyoto_guide_app: {
-          title: '京都観光音声ガイドアプリ',
+          title: '🗺️ 京都観光音声ガイドアプリ',
           shortDescription: `製作時期:2026/01-2026/02
 製作内容:京都駅周辺スポットの音声ガイド付き観光アプリ`,
           fullDescription: '京都駅周辺の観光スポットを、位置情報と連動した音声ガイドで案内するモバイルアプリです。スポット検索、マップ表示、詳細情報表示に加えて、対象スポットの半径内に入ると音声説明を自動再生する機能を実装しました。オフライン動作にも対応しています。',
         },
         pm_management_app: {
-          title: 'PM Management App',
+          title: '📊 PM Management App',
           shortDescription: `製作時期:2026/01/30-2026/02/19
 製作時間:70時間以上`,
           fullDescription: 'プロジェクト管理とタスク実行ログ（見積/実績・振り返り）を一体化したWebアプリケーションです。親子タスク（WBS）管理、見積と実績の可視化、完了時の振り返り記録、オーナー/メンバー権限管理、タイムラインとダッシュボードによる進捗確認機能を実装しました。',
@@ -130,7 +130,7 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
       },
     },
     blog: {
-      title: '投稿一覧',
+      title: '📝 投稿一覧',
       count: '全 {count} 記事',
       readMore: '続きを読む',
       externalLabel: '外部',
@@ -251,7 +251,7 @@ Google Colaboratory上で、Pythonで簡易的なターン制バトルを実装�
       liveDemo: 'Live Demo',
       data: {
         object_detection_app: {
-          title: 'Object Detection App',
+          title: '🧠 Object Detection App',
           shortDescription: `Development Period: 2024/11
 Implemented the object detection (YOLO) part of an app for a technical college festival project.`,
           fullDescription: `Development Period: 2024/11
@@ -259,7 +259,7 @@ Implemented the object detection (YOLO) part of an app for a technical college f
 Implemented the object detection (YOLO) component for an app being developed for a technical college festival exhibition.`,
         },
         hacku_app: {
-          title: 'HACKU App',
+          title: '📸 HACKU App',
           shortDescription: `Development Period: 2024/06-2025/01
 Built for Comprehensive Project Practice 1
 An Android app that recognizes objects in photos, translates results, and supports image decoration.`,
@@ -269,7 +269,7 @@ Built for Comprehensive Project Practice 1
 An Android app that runs object recognition on photos using TensorFlow Lite, then displays and translates the detected results (Google Cloud Translation API) and provides an image decoration feature.`,
         },
         next_blog_app: {
-          title: 'Next Blog App',
+          title: '📝 Next Blog App',
           shortDescription: `Development Period: 2025/12-2026/01
 Blog with admin (posts, categories, cover image upload).`,
           fullDescription: `Development Period: 2025/12-2026/01
@@ -283,7 +283,7 @@ Features:
 - Cover image upload (Supabase Storage)`,
         },
         household_budget_app: {
-          title: 'Household Budget Tool',
+          title: '💳 Household Budget Tool',
           shortDescription: `Development Period: 2024/12-2025/01
 Development Time: About 30 hours`,
           fullDescription: `Development Period: 2024/12-2025/01
@@ -292,7 +292,7 @@ Development Time: About 30 hours
 A Python application that allows you to add income and expenses and display monthly financial summaries. Easy household budget management with an intuitive GUI.`,
         },
         study_app: {
-          title: 'Study Tool',
+          title: '⏱️ Study Tool',
           shortDescription: `Development Period: 2025/01-2025/02
 Development Time: About 15 hours`,
           fullDescription: `Development Period: 2025/01-2025/02
@@ -301,7 +301,7 @@ Development Time: About 15 hours
 A study support application with timer functions and goal-setting features. Supports efficient learning.`,
         },
         gundam_game: {
-          title: 'Gundam Battle Game',
+          title: '🎮 Gundam Battle Game',
           shortDescription: `Development Period: 2024/06
 Development Time: About 2 hours`,
           fullDescription: `Development Period: 2024/06
@@ -310,13 +310,13 @@ Development Time: About 2 hours
 Built a simple turn-based battle game in Python on Google Colaboratory.`,
         },
         kyoto_guide_app: {
-          title: 'Kyoto Audio Guide App',
+          title: '🗺️ Kyoto Audio Guide App',
           shortDescription: `Development Period: 2026/01-2026/02
 Scope: Tourist app with location-based audio guide around Kyoto Station`,
           fullDescription: 'A mobile app that guides users through tourist spots around Kyoto Station with location-linked audio guidance. It includes spot search, map view, and detailed spot pages, plus automatic audio playback when entering each spot radius. Offline operation is also supported.',
         },
         pm_management_app: {
-          title: 'PM Management App',
+          title: '📊 PM Management App',
           shortDescription: `Development Period: 2026/01/30-2026/02/19
 Development Time: 70+ hours`,
           fullDescription: 'A web application that integrates project management with task execution logs (estimated vs actual time and retrospectives). It includes parent-child task (WBS) management, estimation/actual visualization, completion-time review notes, owner/member permission controls, and progress tracking with timeline and dashboard views.',
@@ -324,7 +324,7 @@ Development Time: 70+ hours`,
       },
     },
     blog: {
-      title: 'Blog',
+      title: '📝 Blog',
       count: 'Total {count} Posts',
       readMore: 'Read more',
       externalLabel: 'External',

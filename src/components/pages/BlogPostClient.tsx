@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { formatTitle } from '@/lib/title';
 import React from 'react';
 import { Post } from '@/types/post';
 
@@ -15,7 +16,7 @@ export default function BlogPostClient({ post }: Props) {
 
   React.useEffect(() => {
     if (post) {
-      document.title = `${post.title} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
+      document.title = formatTitle(post.title, language);
     }
   }, [post, language]);
 

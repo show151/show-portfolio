@@ -1,19 +1,12 @@
 import { getPostsSortedByDate, posts } from '@/lib/posts';
 import { PostCard } from '@/components/features/PostCard';
 import { Metadata } from 'next';
+import { formatTitle } from '@/lib/title';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const title = `Blog | 河野 聖`;
-  const description = '技術記事・制作メモ';
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: formatTitle('投稿', 'ja'),
+  description: '技術記事・制作メモ',
+};
 
 export default function BlogPage() {
   const sorted = getPostsSortedByDate(posts);
@@ -23,7 +16,7 @@ export default function BlogPage() {
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl font-bold mb-6">
-            <span className="gradient-text">ブログ</span>
+            <span className="gradient-text">投稿</span>
           </h1>
           <div className="mt-6 animate-fade-in animation-delay-600">
             <span className="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-full text-sm font-medium">

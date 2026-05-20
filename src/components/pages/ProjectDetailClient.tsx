@@ -3,6 +3,7 @@
 import { getProjectBySlug } from '@/lib/data';
 import { ArrowLeft, Github } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { formatTitle } from '@/lib/title';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo } from 'react';
@@ -21,7 +22,7 @@ export default function ProjectDetailClient({ project }: Props) {
 
   useEffect(() => {
     if (project) {
-      document.title = `${projectTitle} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
+      document.title = formatTitle(projectTitle, language);
     }
   }, [projectTitle, language, project]);
 

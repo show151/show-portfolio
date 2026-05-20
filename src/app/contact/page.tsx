@@ -2,6 +2,12 @@
 
 import { Mail, Github, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { formatTitle } from '@/lib/title';
+import { translations } from '@/lib/i18n';
+
+export const metadata = {
+  title: formatTitle(translations.ja.contact.title, 'ja'),
+};
 
 export default function ContactPage() {
   const { t } = useLanguage();

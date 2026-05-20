@@ -3,12 +3,18 @@
 import { Calendar } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect } from 'react';
+import { formatTitle } from '@/lib/title';
+import { translations } from '@/lib/i18n';
+
+export const metadata = {
+  title: formatTitle(translations.ja.career.title, 'ja'),
+};
 
 export default function CareerPage() {
   const { t, language } = useLanguage();
 
   useEffect(() => {
-    document.title = `${t.career.title} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
+    document.title = formatTitle(t.career.title, language);
   }, [t.career.title, language]);
 
   const timelineData = [

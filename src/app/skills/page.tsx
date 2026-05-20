@@ -3,6 +3,7 @@
 import { Award, Check, Cloud, Code, Wrench } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect } from 'react';
+import { formatTitle } from '@/lib/title';
 
 interface SkillCategory {
   titleKey: keyof typeof import('@/lib/i18n').translations.ja.skills.categories;
@@ -66,7 +67,7 @@ export default function SkillsPage() {
   const { t, language } = useLanguage();
 
   useEffect(() => {
-    document.title = `${t.skills.title} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
+    document.title = formatTitle(t.skills.title, language);
   }, [t.skills.title, language]);
 
   return (

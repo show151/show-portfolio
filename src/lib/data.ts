@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     id: 1,
     slug: 'object_detection_app',
-    title: '物体検知アプリ',
+    title: '🧠 物体検知アプリ',
     shortDescription: `製作時期: 2024/11
 高専祭の展示として総合課題実習1で製作中のアプリのAIの動作部分を実装しました`,
     imagePath: '/images/yolo_app.png',
@@ -30,7 +30,7 @@ export const projects: Project[] = [
   {
     id: 2,
     slug: 'household_budget_app',
-    title: '家計簿作成ツール',
+    title: '💳 家計簿作成ツール',
     shortDescription: `製作時期:2024/12-2025/01
                        製作時間:約30時間`,
     imagePath: '/images/household_budget.mp4',
@@ -44,7 +44,7 @@ export const projects: Project[] = [
   {
     id: 3,
     slug: 'study_app',
-    title: '学習ツール',
+    title: '⏱️ 学習ツール',
     shortDescription: `製作時期:2025/01-2025/02
                        製作時間:約15時間`,
     imagePath: '/images/study_app.mp4',
@@ -58,7 +58,7 @@ export const projects: Project[] = [
   {
     id: 4,
     slug: 'gundam_game',
-    title: 'ガンダムバトルゲーム',
+    title: '🎮 ガンダムバトルゲーム',
     shortDescription: `製作時期: 2024/06
 製作時間: 約2時間`,
     imagePath: '/images/gundam_game.png',
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     id: 5,
     slug: 'kyoto_guide_app',
-    title: '京都観光音声ガイドアプリ',
+    title: '🗺️ 京都観光音声ガイドアプリ',
     shortDescription: `製作時期:2026/01-2026/02
                        製作内容:京都駅周辺スポットの音声ガイド付き観光アプリ`,
     imagePath: '/images/kyoto_guide_app.png',
@@ -85,7 +85,7 @@ export const projects: Project[] = [
   {
     id: 6,
     slug: 'pm_management_app',
-    title: 'PM Management App',
+    title: '📊 PM Management App',
     shortDescription: `製作時期:2026/01/30-2026/02/19
                        製作時間:70時間以上`,
     imagePath: '/images/pm_management_app.png',
@@ -99,7 +99,7 @@ export const projects: Project[] = [
   {
     id: 7,
     slug: 'hacku_app',
-    title: 'HACKU アプリ',
+    title: '📸 HACKU アプリ',
     shortDescription: `製作期間: 2024/06-2025/01
 総合課題実習1で制作
 カメラで撮影した画像を物体認識し、結果の翻訳表示やデコレーションを行うAndroidアプリです。`,
@@ -114,7 +114,7 @@ export const projects: Project[] = [
   {
     id: 8,
     slug: 'next_blog_app',
-    title: 'Next Blog App',
+    title: '📝 Next Blog App',
     shortDescription: `製作時期: 2025/12-2026/01
 管理画面つきブログ（記事/カテゴリ/画像アップロード）`,
     imagePath: '/images/showblogapp.png',
