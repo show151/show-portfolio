@@ -10,7 +10,6 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: SITE_NAME_JA,
-  description: 'TypeScript, React, Azureのスキルを証明するモダンなポートフォリオサイト',
 };
 
 export default function RootLayout({
