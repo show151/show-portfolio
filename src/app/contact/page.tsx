@@ -5,6 +5,7 @@ import ContactClient from '@/components/pages/ContactClient';
 
 export const metadata: Metadata = {
   title: formatTitle(translations.ja.contact.title, 'ja'),
+  description: '河野聖へのお問い合わせはこちら。メール・GitHub・LinkedInからお気軽にどうぞ。',
 };
 
 export default function ContactPage() {

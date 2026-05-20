@@ -6,6 +6,7 @@ import { translations } from '@/lib/i18n';
 
 export const metadata: Metadata = {
   title: formatTitle(translations.ja.projects.title, 'ja'),
+  description: 'Kotlin・Python・Next.js・React Nativeなどで制作したアプリ・ツール一覧。物体検知・GUI・ブログ・PM管理アプリなど全 8 作品。',
 };
 
 export default function ProjectsPage() {

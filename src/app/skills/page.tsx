@@ -5,6 +5,7 @@ import { translations } from '@/lib/i18n';
 
 export const metadata: Metadata = {
   title: formatTitle(translations.ja.skills.title, 'ja'),
+  description: 'TypeScript・Python・Kotlin・C#などのプログラミング言語、Docker・Google Cloudなどのクラウド・インフラ技術、実用英語技能検到2級などの資格。',
 };
 
 interface SkillCategory {
