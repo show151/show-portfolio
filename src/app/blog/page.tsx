@@ -1,28 +1,33 @@
-"use client";
-
 import { getPostsSortedByDate, posts } from '@/lib/posts';
 import { PostCard } from '@/components/features/PostCard';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useEffect } from 'react';
+import { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const title = `Blog | 河野 聖`;
+  const description = '技術記事・制作メモ';
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+    },
+  };
+}
 
 export default function BlogPage() {
-  const { t, language } = useLanguage();
   const sorted = getPostsSortedByDate(posts);
-
-  useEffect(() => {
-    document.title = `${t.blog.title} | ${language === 'ja' ? '河野 聖' : 'Sei Kono'}`;
-  }, [t.blog.title, language]);
 
   return (
     <main className="min-h-screen bg-black">
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl font-bold mb-6">
-            <span className="gradient-text">{t.blog.title}</span>
+            <span className="gradient-text">ブログ</span>
           </h1>
           <div className="mt-6 animate-fade-in animation-delay-600">
             <span className="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-full text-sm font-medium">
-              {t.blog.count.replace('{count}', posts.length.toString())}
+              記事数: {posts.length}
             </span>
           </div>
         </div>
