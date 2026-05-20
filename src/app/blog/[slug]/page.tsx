@@ -3,8 +3,8 @@ import BlogPostClient from '@/components/pages/BlogPostClient';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const { slug } = (await params) as { slug: string };
   const post = getPostBySlug(slug);
   if (!post) return { title: '記事が見つかりません' };
 
@@ -24,8 +24,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }: { params: any }) {
+  const { slug } = (await params) as { slug: string };
+  const post = getPostBySlug(slug);
   if (!post) return notFound();
 
   return <BlogPostClient post={post} />;

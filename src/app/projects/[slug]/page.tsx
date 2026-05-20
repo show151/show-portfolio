@@ -3,8 +3,8 @@ import ProjectDetailClient from '@/components/pages/ProjectDetailClient';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const { slug } = (await params) as { slug: string };
   const project = getProjectBySlug(slug);
   if (!project) return { title: 'Project not found' };
 
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function ProjectPage({ params }: { params: any }) {
+  const { slug } = (await params) as { slug: string };
   const project = getProjectBySlug(slug);
   if (!project) return notFound();
 
