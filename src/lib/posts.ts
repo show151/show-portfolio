@@ -2,18 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { Post } from '@/types/post';
+import { toTime } from '@/lib/utils';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
-
-const toTime = (date: string | undefined) => {
-  if (!date) return 0;
-  const normalized = date.length === 7 ? `${date}-01` : date;
-  return new Date(normalized).getTime();
-};
 
 export const getPostsSortedByDate = (list: Post[]) =>
   [...list].sort((a, b) => {

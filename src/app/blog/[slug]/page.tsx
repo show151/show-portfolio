@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { formatTitle } from '@/lib/title';
 
-export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
-  const { slug } = (await params) as { slug: string };
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return { title: '記事が見つかりません' };
 
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   };
 }
 
-export default async function PostPage({ params }: { params: any }) {
-  const { slug } = (await params) as { slug: string };
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return notFound();
 

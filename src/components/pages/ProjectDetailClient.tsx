@@ -1,12 +1,11 @@
 "use client";
 
-import { getProjectBySlug } from '@/lib/data';
 import { ArrowLeft, Github } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { formatTitle } from '@/lib/title';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import { Project } from '@/types/project';
 
 interface Props {
@@ -16,15 +15,11 @@ interface Props {
 export default function ProjectDetailClient({ project }: Props) {
   const { t, language } = useLanguage();
 
-  const projectTitle = project
-    ? t.projects.data[project.slug as keyof typeof t.projects.data]?.title || project.title
-    : 'Project';
-
   useEffect(() => {
     if (project) {
-      document.title = formatTitle(projectTitle, language);
+      document.title = formatTitle(project.title, language);
     }
-  }, [projectTitle, language, project]);
+  }, [project, language]);
 
   if (!project) {
     return <div className="text-white p-8">Project not found</div>;
@@ -48,9 +43,9 @@ export default function ProjectDetailClient({ project }: Props) {
         
         <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
           <h1 className="text-2xl sm:text-4xl font-bold mb-4 animate-fade-in-up leading-tight">
-            <span className="gradient-text">{projectTitle}</span>
+            <span className="gradient-text">{project.title}</span>
           </h1>
-          <p className="text-base sm:text-xl text-white animate-fade-in animation-delay-300 whitespace-pre-line">{t.projects.data[project.slug as keyof typeof t.projects.data]?.shortDescription || project.shortDescription}</p>
+          <p className="text-base sm:text-xl text-white animate-fade-in animation-delay-300 whitespace-pre-line">{project.shortDescription}</p>
         </header>
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12">
@@ -100,7 +95,7 @@ export default function ProjectDetailClient({ project }: Props) {
         <section className="mb-12 p-5 sm:p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-600">
           <h2 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6"><span className="gradient-text">{t.projects.projectOverview}</span></h2>
           <div className="text-white leading-relaxed whitespace-pre-line">
-            {t.projects.data[project.slug as keyof typeof t.projects.data]?.fullDescription || project.fullDescription}
+            {project.fullDescription}
           </div>
         </section>
 

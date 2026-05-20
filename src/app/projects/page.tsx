@@ -1,29 +1,26 @@
-"use client";
-
 import { getProjectsSortedByDate, projects } from '@/lib/data';
 import { ProjectCard } from '@/components/features/ProjectCard';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useEffect } from 'react';
+import { Metadata } from 'next';
 import { formatTitle } from '@/lib/title';
+import { translations } from '@/lib/i18n';
+
+export const metadata: Metadata = {
+  title: formatTitle(translations.ja.projects.title, 'ja'),
+};
 
 export default function ProjectsPage() {
-  const { t, language } = useLanguage();
   const sortedProjects = getProjectsSortedByDate(projects);
-
-  useEffect(() => {
-    document.title = formatTitle(t.projects.title, language);
-  }, [t.projects.title, language]);
 
   return (
     <main className="min-h-screen bg-black">
       <section className="pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl font-bold mb-6">
-            <span className="gradient-text">{t.projects.title}</span>
+            <span className="gradient-text">{translations.ja.projects.title}</span>
           </h1>
           <div className="mt-6 animate-fade-in animation-delay-600">
             <span className="px-4 py-2 bg-blue-900/40 text-blue-200 rounded-full text-sm font-medium">
-              {t.projects.count.replace('{count}', projects.length.toString())}
+              {translations.ja.projects.count.replace('{count}', projects.length.toString())}
             </span>
           </div>
         </div>

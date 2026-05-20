@@ -1,10 +1,5 @@
 import { Project } from '@/types/project';
-
-const toTime = (date: string | undefined) => {
-  if (!date) return 0;
-  const normalized = date.length === 7 ? `${date}-01` : date;
-  return new Date(normalized).getTime();
-};
+import { toTime } from '@/lib/utils';
 
 export const getProjectsSortedByDate = (list: Project[]) =>
   [...list].sort((a, b) => {

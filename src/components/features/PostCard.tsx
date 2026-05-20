@@ -2,8 +2,6 @@
 
 import { Post } from '@/types/post';
 import Link from 'next/link';
-import React from 'react';
-import Image from 'next/image';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -12,7 +10,6 @@ interface PostCardProps {
 }
 
 export const PostCard = ({ post }: PostCardProps) => {
-  const hasMedia = !!post.imagePath;
   const emojiFor = (categories?: string[]) => {
     if (!categories || categories.length === 0) return '📝';
     if (categories.includes('redis')) return '🧠';

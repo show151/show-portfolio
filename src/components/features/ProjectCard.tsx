@@ -52,10 +52,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
         <div className="p-6 flex flex-col grow">
           <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-            {t.projects.data[project.slug as keyof typeof t.projects.data]?.title || project.title}
+            {project.title}
           </h3>
           <p className="text-gray-300 mb-4 grow whitespace-pre-line">
-            {t.projects.data[project.slug as keyof typeof t.projects.data]?.shortDescription || project.shortDescription}
+            {project.shortDescription}
           </p>
           
           <div className="space-y-4">

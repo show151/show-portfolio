@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SITE_NAME_JA } from '@/lib/title';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/show151', label: 'GitHub' },
@@ -66,7 +67,7 @@ export const Footer = () => {
 
         <div className="text-center">
           <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
-            &copy; {currentYear} YourName. {t.footer.copyright}
+            &copy; {currentYear} {SITE_NAME_JA}. {t.footer.copyright}
           </p>
         </div>
       </div>
