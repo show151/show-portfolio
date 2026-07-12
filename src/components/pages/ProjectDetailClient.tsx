@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { Project } from '@/types/project';
+import { renderTextWithLinks } from '@/lib/utils';
 
 interface Props {
   project: Project | null;
@@ -14,15 +15,20 @@ interface Props {
 
 export default function ProjectDetailClient({ project }: Props) {
   const { t, language } = useLanguage();
+  const projectTitle = language === 'en' ? project?.titleEn ?? project?.title ?? '' : project?.title ?? '';
+  const projectShortDescription =
+    language === 'en' ? project?.shortDescriptionEn ?? project?.shortDescription ?? '' : project?.shortDescription ?? '';
+  const projectFullDescription =
+    language === 'en' ? project?.fullDescriptionEn ?? project?.fullDescription ?? '' : project?.fullDescription ?? '';
 
   useEffect(() => {
     if (project) {
-      document.title = formatTitle(project.title, language);
+      document.title = formatTitle(projectTitle, language);
     }
-  }, [project, language]);
+  }, [project, projectTitle, language]);
 
   if (!project) {
-    return <div className="text-white p-8">Project not found</div>;
+    return <div className="text-white p-8">{t.projects.notFound}</div>;
   }
 
   const hasMedia = project.imagePath?.startsWith('/');
@@ -43,9 +49,9 @@ export default function ProjectDetailClient({ project }: Props) {
         
         <header className="mb-10 pb-8 border-b-2 border-gray-200 dark:border-slate-700">
           <h1 className="text-2xl sm:text-4xl font-bold mb-4 animate-fade-in-up leading-tight">
-            <span className="gradient-text">{project.title}</span>
+            <span className="gradient-text">{projectTitle}</span>
           </h1>
-          <p className="text-base sm:text-xl text-white animate-fade-in animation-delay-300 whitespace-pre-line">{project.shortDescription}</p>
+          <p className="text-base sm:text-xl text-white animate-fade-in animation-delay-300 whitespace-pre-line">{renderTextWithLinks(projectShortDescription)}</p>
         </header>
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12">
@@ -81,7 +87,7 @@ export default function ProjectDetailClient({ project }: Props) {
               ) : (
                 <Image
                   src={project.imagePath}
-                  alt={project.title}
+                  alt={projectTitle}
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, 768px"
@@ -95,7 +101,7 @@ export default function ProjectDetailClient({ project }: Props) {
         <section className="mb-12 p-5 sm:p-8 bg-gray-900 rounded-xl shadow-lg animate-slide-in-left animation-delay-600">
           <h2 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6"><span className="gradient-text">{t.projects.projectOverview}</span></h2>
           <div className="text-white leading-relaxed whitespace-pre-line">
-            {project.fullDescription}
+            {renderTextWithLinks(projectFullDescription)}
           </div>
         </section>
 

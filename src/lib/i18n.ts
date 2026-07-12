@@ -30,6 +30,8 @@ export const translations = {
     contact: {
       title: '✉ お問い合わせ',
       email: 'Eメール',
+      github: 'GitHub',
+      linkedin: 'LinkedIn',
       emailDesc: '返信は順次行います。',
       githubDesc: 'コードはこちら。',
       linkedinDesc: '経歴はこちら。',
@@ -55,6 +57,7 @@ export const translations = {
       techStack: '使用技術',
       githubRepo: 'GitHub リポジトリ',
       liveDemo: 'ライブデモ',
+      notFound: 'プロジェクトが見つかりません',
     },
     blog: {
       title: '📝 投稿一覧',
@@ -151,6 +154,8 @@ export const translations = {
     contact: {
       title: '✉ Contact',
       email: 'Email',
+      github: 'GitHub',
+      linkedin: 'LinkedIn',
       emailDesc: 'Replies as available.',
       githubDesc: 'Source code.',
       linkedinDesc: 'Work history.',
@@ -176,6 +181,7 @@ export const translations = {
       techStack: 'Tech Stack',
       githubRepo: 'GitHub Repository',
       liveDemo: 'Live Demo',
+      notFound: 'Project not found',
     },
     blog: {
       title: '📝 Blog',

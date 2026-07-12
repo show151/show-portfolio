@@ -3,11 +3,12 @@ import ProjectDetailClient from '@/components/pages/ProjectDetailClient';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { formatTitle } from '@/lib/title';
+import { translations } from '@/lib/i18n';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
-  if (!project) return { title: 'Project not found' };
+  if (!project) return { title: formatTitle(translations.ja.projects.notFound, 'ja') };
 
   const title = formatTitle(project.title, 'ja');
   const description = project.shortDescription || project.fullDescription || '';

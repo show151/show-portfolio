@@ -4,7 +4,7 @@ import { Mail, Github, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactClient() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const CONTACT_INFO = [
     { 
@@ -15,16 +15,16 @@ export default function ContactClient() {
       description: t.contact.emailDesc
     },
     { 
-      title: 'GitHub', 
+      title: t.contact.github, 
       icon: Github, 
       value: 'show151', 
       href: 'https://github.com/show151', 
       description: t.contact.githubDesc
     },
     { 
-      title: 'LinkedIn', 
+      title: t.contact.linkedin, 
       icon: Linkedin, 
-      value: '河野 聖', 
+      value: language === 'en' ? 'Sho Kawano' : '河野 聖', 
       href: 'https://linkedin.com/in/聖-河野-2a7388313/', 
       description: t.contact.linkedinDesc
     },

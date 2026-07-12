@@ -12,17 +12,21 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>(() => {
-    if (typeof window === 'undefined') {
-      return 'ja';
-    }
-    const saved = localStorage.getItem('language') as Language | null;
-    return saved && translations[saved] ? saved : 'ja';
-  });
+  const [language, setLanguage] = useState<Language>('ja');
+  const [isLanguageLoaded, setIsLanguageLoaded] = useState(false);
 
   useEffect(() => {
+    const saved = localStorage.getItem('language') as Language | null;
+    if (saved && translations[saved]) {
+      setLanguage(saved);
+    }
+    setIsLanguageLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isLanguageLoaded) return;
     localStorage.setItem('language', language);
-  }, [language]);
+  }, [language, isLanguageLoaded]);
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === 'ja' ? 'en' : 'ja'));

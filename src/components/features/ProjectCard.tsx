@@ -11,9 +11,12 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const hasMedia = project.imagePath?.startsWith('/');
   const isVideo = project.imagePath?.endsWith('.mp4');
+  const projectTitle = language === 'en' ? project.titleEn ?? project.title : project.title;
+  const projectShortDescription =
+    language === 'en' ? project.shortDescriptionEn ?? project.shortDescription : project.shortDescription;
 
   return (
     <Link href={`/projects/${project.slug}`} className="block group h-full">
@@ -34,7 +37,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             ) : (
               <Image
                 src={project.imagePath}
-                alt={project.title}
+                alt={projectTitle}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -52,10 +55,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
         <div className="p-6 flex flex-col grow">
           <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-            {project.title}
+            {projectTitle}
           </h3>
           <p className="text-gray-300 mb-4 grow whitespace-pre-line">
-            {project.shortDescription}
+            {projectShortDescription}
           </p>
           
           <div className="space-y-4">
